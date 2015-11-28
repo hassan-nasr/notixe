@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <head>
+        <script src="https://apis.google.com/js/client:platform.js"></script>
+    </head>
+    <body>
+        <wicket:panel>
+            <meta id="scopesList" wicket:id="scopesList" name="google-signin-scope" content="" />
+            <meta id="clientid" wicket:id="clientid" name="clientid" content="" />
+            <div wicket:id="feedback" />
+            <a class="btn red btn-block" type="button" id="signinButton" onclick="javascript:startflow();">
+                <span wicket:id="getPermissionButtonLabel" id="gsignInText"></span>
+                <img wicket:id="indImage" id="gindImage" style="display: none; width: 25px; height: 25px" />
+            </a>
+
+            <form id="bridgeForm" wicket:id="bridgeForm" hidden="true">
+                <input id="bridgeText0" hidden="true" wicket:id="bridgeText0" type="text">
+                <input id="bridgeSubmit" wicket:id="bridgeSubmit" type="submit">
+            </form>
+        </wicket:panel>
+    </body>
+</html>

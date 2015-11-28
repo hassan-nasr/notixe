@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>SendMessage</title>
+</head>
+<body>
+<wicket:panel>
+
+    <div wicket:id="feedback"/>
+    <div class="portlet box">
+        <div class="portlet-title">
+            <div class="caption"><i class="icon-reorder"></i>Rate Your Friends</div>
+            <div class="tools dropdown">
+                <a href="javascript:;" class="collapse"></a>
+
+                <a href="#" data-toggle="dropdown" class="popovers config" data-placement="left" data-content=" Rating is a good way to let your friends know your feelings about them." data-original-title="Help" data-container="body"></a>
+                <!--<ul class="dropdown-menu extended" >
+                    <li class="">
+                        <p> Rating is a good way to let your friends know your feelings about them.</p>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+        <div class="portlet-body form transparentWhite">
+            <form wicket:id="form">
+                <div>
+                    <div class="row-fluid">
+                        <div class="span6">
+
+                            <input type="text" class="m-wrap span12" placeholder="Receiver" wicket:id="receiver"/>
+                        </div>
+                        <div class="span6">
+                            <div class="starRating">
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <input id="rating1" type="radio" name="rating" value="1"
+                                                       onclick="$('#rate').val(1)">
+                                                <label for="rating1"><span>1</span></label>
+                                            </div>
+                                            <input id="rating2" type="radio" name="rating" value="2"
+                                                   onclick="$('#rate').val(2)">
+                                            <label for="rating2"><span>2</span></label>
+                                        </div>
+                                        <input id="rating3" type="radio" name="rating" value="3"
+                                               onclick="$('#rate').val(3)">
+                                        <label for="rating3"><span>3</span></label>
+                                    </div>
+                                    <input id="rating4" type="radio" name="rating" value="4"
+                                           onclick="$('#rate').val(4)">
+                                    <label for="rating4"><span>4</span></label>
+                                </div>
+                                <input id="rating5" type="radio" name="rating" value="5" onclick="$('#rate').val(5)">
+                                <label for="rating5"><span>5</span></label>
+                            </div>
+                            <select wicket:id="rate" class="m-wrap span12" id="rate" style="display: none">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="tooltips" data-placement="left" data-original-title="Context">
+                            <select  data-placeholder="Context"  class="m-wrap span12 select2" wicket:id="context"/>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div>
+                            <input type="text" placeholder="Your comment (Optional but recommended)" class="m-wrap span12" wicket:id="comment"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <!--<label class="controls checkbox">-->
+                      <input type="checkbox"  wicket:id="anonymously" class="" placeholder="Rate Anonymously">  Rate Anonymously
+                    <!--</label>-->
+                    <a wicket:id="send" class="btn green pull-right">Rate</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</wicket:panel>
+</body>
+</html>

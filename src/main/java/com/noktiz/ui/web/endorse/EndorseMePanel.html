@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>SendMessage</title>
+</head>
+<body>
+<wicket:panel>
+
+    <div wicket:id="feedback"/>
+    <div class="portlet box">
+        <div class="portlet-title">
+            <div class="caption"><i class="icon-reorder"></i>
+                <wicket:message key="Endorse"/></div>
+        </div>
+        <div class="portlet-body form transparentWhite">
+            <form wicket:id="form">
+                <div>
+                    <span wicket:id="title" />
+                    <div class="row-fluid">
+                        <div>
+                            <input type="text" wicket:message="placeholder:endorseSuggestions" class="m-wrap span12" wicket:id="context"/>
+                        </div>
+                        <a wicket:id="submit" class="btn green pull-right">
+                            <wicket:message key="Endorse"/></a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</wicket:panel>
+</body>
+</html>

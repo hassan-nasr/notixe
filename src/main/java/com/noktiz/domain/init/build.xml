@@ -1,0 +1,22 @@
+<project>
+    <property name="tomcathome" value="D:\Devel\Apache\apache-tomcat-8.0.20\"/>
+    <property name="context" value="notixe" />
+    <!--<property name="projectHome" value="${tomcathome}/webapps/${context}" />-->
+    <property name="projectHome" value="D:/Projects/NEW Noktiz/noktiz/Noktiz/target/notixe-0.2.2" />
+    <property name="lib.dir" value="${projectHome}/WEB-INF/lib/"/>
+    <property name="class.dir" value="${projectHome}/WEB-INF/classes/" />
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+        <fileset dir="${tomcathome}/lib" includes="**/*.jar" />
+        <pathelement location="${projectHome}/WEB-INF/classes" ></pathelement>
+    </path>
+
+    <target name="init">
+        <java classname="com.noktiz.domain.init.InitDataFiller" args="drop" dir="${class.dir}" fork="true">
+        <!--<java classname="com.noktiz.domain.entity.access.AccessLevel"  fork="true">-->
+            <classpath>
+                <path refid="classpath"/>
+            </classpath>
+        </java>
+    </target>
+</project>

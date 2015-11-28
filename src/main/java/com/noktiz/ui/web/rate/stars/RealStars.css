@@ -1,0 +1,10 @@
+span.realStars, span.realStars span {
+    display: block;
+    background: url(stars2.png) 0 -100px repeat-x;
+    width: 500px;
+    height: 100px;
+}
+
+span.realStars span {
+    background-position: 0 0;
+}

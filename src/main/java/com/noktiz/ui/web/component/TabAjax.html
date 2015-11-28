@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>TabAjax</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <ul wicket:id="tabContainer" class="ver-inline-menu tabbable margin-bottom-10" style="margin-bottom: -1px;">
+                <li wicket:id="tab">
+                    <a wicket:id="action">
+                        <i wicket:id="icon"></i> 
+                        <span wicket:id="title"/>
+                    </a>
+                    <span id="indicator" style="display: none">please wait</span>
+                    <span class="after"></span>
+                </li>
+            </ul>
+        </wicket:panel>
+    </body>
+</html>
+<!--<ul wicket:id="tabContainer" class="ver-inline-menu tabbable margin-bottom-10">
+                <li wicket:id="tab">
+                    <a wicket:id="action">
+                        <i wicket:id="icon"></i> 
+                        <span wicket:id="title"/>
+                    </a>
+                    <span class="after"></span> 
+                </li>
+            </ul> -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd"
+      xml:lang="en"
+      lang="en">
+<head>
+    <wicket:head>
+        <title>Profile</title>
+    </wicket:head>
+</head>
+<body class="">
+<wicket:extend>
+    <div class="container-fluid profileContent appleFont">
+        <!--<span wicket:id="label"> uname </span>-->
+        <div class="row-fluid" wicket:id="aboutBasicInfo" style="margin-bottom: 30px"/>
+
+        <div class="row-fluid" wicket:id="friendsTrustMe" style="margin-bottom: 30px"/>
+        <!--<div class="row-fluid" wicket:id="ratesOfPanel"/>-->
+        <div class="row-fluid">
+            <div class="span8">
+                <div class="row-fluid">
+                    <div wicket:id="endorseOverview"/>
+                </div>
+                <div class="row-fluid">
+                    <div wicket:id="rateInvitesForMe"/>
+                </div>
+            </div>
+            <div class="span4 row-fluid">
+                <!--<wicket:enclosure child="thankCount">-->
+                <!--<span style="display: inline-block;" class="alert alert-info span12">-->
+                    <!--<span wicket:id="thankCount" class=""/> Thanks from <span wicket:id="userCount" class=""/>-->
+                <!--</span>-->
+                <!--</wicket:enclosure>-->
+                <div wicket:id="newEndorse"/>
+                <div class="row-fluid">
+                    <div wicket:id="newEndorsesToAdd" class="span12"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="span4" >
+        <div class="span8" wicket:id="ratePanel"/>
+        </div>-->
+    </div>
+</wicket:extend>
+</body>
+</html>

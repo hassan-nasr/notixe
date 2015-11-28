@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd"  
+      xml:lang="en"  
+      lang="en"> 
+    <head><title>Wicket Example</title></head>
+    <body>
+        <wicket:panel>
+            <script type="application/javascript">
+
+            </script>
+            <div wicket:id="feedback" />
+            <div id="status">
+            </div>
+            <div class="social-icons">
+                <a wicket:id="getPermissionButton" href="#" class="btn blue btn-block" onclick=" indicate();  " style="background-color: rgb(68, 97, 157); color: white;">
+                    <span wicket:id="getPermissionButtonLabel"></span>
+                    <img wicket:id="indImage" id="indImage" style="display: none; width: 25px; height: 25px" />
+                </a>
+            </div>
+            <span wicket:id="description"></span>
+            <div wicket:id="agreeCheck"><input type="checkbox" id="agree" class="checker" >
+                <wicket:message key="ImAgree"/></div>
+            <div id="agreeWarning" class="error" style="display: none; background-color: red">
+                <wicket:message key="agreeMessage"/> </div>
+            <form wicket:id="registerFacebookData" style="display: none">
+                <input type="text" name="facebookId" wicket:id="facebookId" id="facebookId"/>
+                <input type="text" name="access_token" wicket:id="access_token" id="access_token"/>
+                <!--
+                <input type="text" name="email" wicket:id="email" id="email"/>
+                <input type="text" name="gender" wicket:id="gender" id="gender"/>
+                -->
+                <input type="submit" wicket:id="submitData" id="submitData" />
+            </form>
+        </wicket:panel>
+    </body>
+</html>

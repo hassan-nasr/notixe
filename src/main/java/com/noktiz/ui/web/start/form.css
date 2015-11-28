@@ -1,0 +1,129 @@
+/* Form Layout */
+
+.form-wrapper {
+  /*height: 430px;*/
+  background: transparent;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  padding: 30px;
+  max-width: 90%;
+}
+
+.form-wrapper h3 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+form {
+
+}
+
+.form-wrapper .form-item {
+  width: 100%;
+}
+
+.form-wrapper .form-item input {
+  background: #fafafa;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 40px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-wrapper .form-item input:focus {
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.form-wrapper .button-panel {
+  margin: 2em 0 0;
+  width: 100%;
+}
+
+.form-wrapper .button-panel .button {
+  background: #f1b46b;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  border-bottom: 2px solid #8c8c8c;
+}
+
+.form-wrapper .button:hover {
+  background: #f1a323;
+}
+
+.form-wrapper .form-footer {
+  font-size: 1em;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.form-wrapper .form-footer a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-wrapper .form-footer a:hover {
+  border-bottom: 1px dotted #8c8c8c;
+}
+
+
+.form-wrapper .button-panel .facebook{
+  background: rgb(15, 106, 255);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  border-radius: 5px;
+  /*text-transform: uppercase;*/
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  margin: 0px;
+  border-bottom: 2px solid #8c8c8c;
+}
+
+.form-wrapper .facebook:hover {
+  background: #0505ee;
+}
+
+.form-wrapper .button-panel .google-plus {
+  margin-top: -15px;
+  background: #f16272;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  border-radius: 5px;
+  /*text-transform: uppercase;*/
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  border-bottom: 2px solid #8c8c8c;
+}
+
+.form-wrapper .google-plus:hover {
+  background: #ee3e52;
+}

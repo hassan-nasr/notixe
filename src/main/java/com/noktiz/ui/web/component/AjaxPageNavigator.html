@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>AjaxPageNavigator</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <span wicket:id="wmc" class="btn-group">
+                    <a wicket:id="first" class="tooltips btn mini" data-placement="bottom" wicket:message="data-original-title:Newest">
+                        <span class="icon-backward"/>
+                    </a>
+                    <a wicket:id="previous" class="tooltips btn mini yellow-stripe" data-placement="bottom" wicket:message="data-original-title:Newer">
+                        <span class="icon-chevron-left"/>
+                    </a>
+                    <a wicket:id="next"class="tooltips btn mini yellow-stripe" data-placement="bottom" wicket:message="data-original-title:Older">
+                        <span class="icon-chevron-right"/>
+                    </a>
+                    <a wicket:id="last"class="tooltips btn mini yellow-stripe" data-placement="bottom" wicket:message="data-original-title:Oldest">
+                        <span class="icon-forward"/>
+                    </a>
+            </span>
+        </wicket:panel>
+    </body>
+</html>

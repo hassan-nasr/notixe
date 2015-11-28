@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>OthersRatingToMe</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <span class="row-fluid">
+                <span class="pull-right span6">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <form wicket:id="form">
+                                <select  wicket:message="data-placeholder:selectRatingFilterMessage"  class="m-wrap " style="width: 100%;"wicket:id="rateContexts"/>
+                            </form>
+                        </div>
+                    </div>
+                </span>
+                <div wicket:id="wmc">
+                    <div wicket:id="ratings">
+                    </div>
+                </div>
+            </span>
+        </wicket:panel>
+    </body>
+</html>

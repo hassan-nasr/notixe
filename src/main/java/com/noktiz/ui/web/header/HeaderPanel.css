@@ -1,0 +1,13 @@
+@media (max-width: 530px) {
+    .logo {
+        display: none;
+    }
+    .header .navbar-inner .container {
+        /*margin-left: 0px !important;*/
+        /*margin-right: 0px !important;*/
+    }
+    .page-content {
+        /*padding: 2px !important;*/
+    }
+
+}

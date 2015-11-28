@@ -1,0 +1,5 @@
+.transparentWhite{
+    background-color: rgba(255,255,255,.5) !important;
+    padding: 7px;
+    margin-bottom: 10px;
+}

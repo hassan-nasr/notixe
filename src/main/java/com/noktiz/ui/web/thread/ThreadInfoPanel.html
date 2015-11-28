@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <wicket:panel>
+            <div wicket:id="wmc">
+                <div class="row-fluid" style="text-align: center;z-index: 1000;">
+                    <span wicket:id="blocked" class="label label-important tooltips "
+                          data-placement="bottom" wicket:message="data-original-title:conversationBlocked"><wicket:message
+                            key="blocked"/></span>
+                    <span wicket:id="iBlocked" class="label label-info tooltips"
+                          data-placement="bottom" wicket:message="data-original-title:iBlocked"><wicket:message
+                            key="blocked"/></span>
+                        <span wicket:id="blockedBy" class="label label-warning tooltips"
+                          data-placement="bottom" wicket:message="data-original-title:blockedBy"><wicket:message
+                                key="blocked"/></span>
+                    <span wicket:id="blockedByCompl" class="label label-inverse tooltips" 
+                          data-placement="bottom" wicket:message="data-original-title:blockedByCompl"><wicket:message
+                            key="blocked"/></span>
+                </div>
+                <div class="row-fluid" >
+                    <div style="text-align: center;width: 50%; float:left;">
+                        <span wicket:id="feedbackMVC">
+                            <span wicket:id="feedback"/>
+                        </span>
+                        <img class="profilePicture" style="width: 100px; height: 100px;" wicket:id="myImage"/>
+                        <br/>
+                        <!--<span wicket:id="myName"/>-->
+                        <div style="display: inline-flex" onmouseover="$('#becomVis').show() && $('#invisiblity').hide();" onmouseout="$('#becomVis').hide() && $('#invisiblity').show();">
+                        <span wicket:id="invisiblity" id="invisiblity"/>
+                        <br/>
+                        <span wicket:id="becomeVisibleWMC">
+                            <a wicket:id="becomeVisibleButton" class="btn blue mini " data-toggle="modal" href="" id="becomVis" style="display: none;">
+                                <wicket:message key="GoVisible"/></a>
+                            <br/>
+                        </span>
+                        </div>
+
+                        <wicket:enclosure child="friendThanks">
+                            <span class="text-success" style="width: 100%; white-space: normal">
+                                <i class="thumbs-up"/>
+                                <span wicket:id="friendThanks" />
+                            </span>
+                        </wicket:enclosure>
+                    </div>
+                    <div style="text-align: center;width: 50%; float:left;">
+                        <img class="profilePicture" style="width: 100px; height: 100px;" wicket:id="friendImage"/>
+                        <br/>
+                        <span wicket:id="friendName"/>
+                        <br/>
+                        <a wicket:id="block" class="btn red mini" style="margin-bottom: 5px;"><i class="icon-ban-circle"/> <span wicket:id="blockMessage"/></a>
+                        <a wicket:id="thanks" class="btn green mini" style="vertical-align: top;"><i class="icon-thumbs-up"/> <span wicket:id="thanksMessage"/></a>
+                    </div>
+                </div>
+                
+            </div>
+            <div wicket:id="becomeVisibleModal" class="modal hide fade " tabindex="-1" data-focus-on="input:first">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h3>
+                        <wicket:message key="goVisibleWarn"/></h3>
+                </div>
+                <div class="modal-body" style="overflow: visible">
+                    <div><wicket:message key="visibilityMessage"/></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">
+                        <wicket:message key="Cancel"/></button>
+                    <a wicket:id="becomeVisibleAction" data-dismiss="modal" class="btn yellow">
+                        <wicket:message key="BecomeVisible"/></a>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>RateOverViews</title>
+</head>
+<body>
+<wicket:panel>
+    <!--<ul >-->
+    <div wicket:id="title" ></div>
+    <div wicket:id="peopleEx" class="element">
+        <a wicket:id="link">
+            <span wicket:id="name" />
+        </a>
+    </div>
+    <div wicket:id="peopleHi" class="element" style="display: none">
+        <a wicket:id="link">
+            <span wicket:id="name" />
+        </a>
+    </div>
+    <a wicket:id="showMore" class="element" href="javascript:void(0)" >
+        <wicket:message key="more"/> </a>
+    <a wicket:id="showLess" class="element" href="javascript:void(0)" style="display: none">
+        <wicket:message key="less"/> </a>
+    <!--</ul>-->
+</wicket:panel>
+</body>
+</html>

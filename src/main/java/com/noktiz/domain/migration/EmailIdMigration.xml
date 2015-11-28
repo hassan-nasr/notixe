@@ -1,0 +1,21 @@
+<project>
+    <property name="tomcathome" value="/opt/tomcat/"/>
+    <property name="context" value="ROOT" />
+    <property name="projectHome" value="${tomcathome}/webapps/${context}" />
+    <property name="lib.dir" value="${projectHome}/WEB-INF/lib/"/>
+    <property name="class.dir" value="${projectHome}/WEB-INF/classes/" />
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+        <fileset dir="${tomcathome}/lib" includes="**/*.jar" />
+        <pathelement location="${projectHome}/WEB-INF/classes" ></pathelement>
+    </path>
+
+    <target name="migrateEmailId">
+        <java classname="com.noktiz.domain.migration.EmailIdMigration" args="drop" dir="${class.dir}" fork="true">
+            <!--<java classname="com.noktiz.domain.entity.access.AccessLevel"  fork="true">-->
+            <classpath>
+                <path refid="classpath"/>
+            </classpath>
+        </java>
+    </target>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <wicket:head>
+        <title>Edit Profile and Settings</title>
+    </wicket:head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<wicket:extend>
+            <span wicket:id="feedbackWmc">
+                <span wicket:id="feedback"/>
+            </span>
+
+    <div class="transparentWhite" style="padding: 20px">
+        <div class="row-fluid bottomAlign">
+            <div class="span8" wicket:id="accountSetting"/>
+            <div class="span4 bottomAlign"  wicket:id="pictureSetting"/>
+        </div>
+
+        <div wicket:id="passwordSetting"/>
+        <div wicket:id="notificationSetting"/>
+    </div>
+</wicket:extend>
+</body>
+</html>

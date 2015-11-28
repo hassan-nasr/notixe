@@ -1,0 +1,6 @@
+.background {
+    background-image: linear-gradient(-30deg, #ccc, #eee)!important;
+    /*background-image: url("./images/red-trees-autumn-road-wide.jpg");*/
+    background-attachment: fixed;
+    background-size:cover
+}

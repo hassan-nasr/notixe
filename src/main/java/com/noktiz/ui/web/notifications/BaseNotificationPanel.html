@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>NotificationPanelAddFriend</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <wicket:panel>
+            <div style="width:226px; padding: 5px;display: inline-block;border-radius: 0px !important;" class="content">
+            <div >
+                <a wicket:id="markRead" style="float: right; padding: 0px !important; border-width: 0px !important;" class="icon-remove pull-right" />
+            </div>
+                <div>
+                <span class="photo" style="display: inline-flex;float: left;">
+                    <img class="profilePicture" wicket:id="photo"/>
+                </span>
+                <span class="title">
+                    <span wicket:id="title" class="from" style=""/>
+                </span>
+                </div>
+                <span wicket:id="realStars" style="float: left;clear: right; margin-right: 5px"></span>
+                <span wicket:id="message" style="display: block; "/>
+                <span class="message">
+
+                    <span wicket:id="actions">
+                        <button class="btn red pull-right mini" wicket:id="action1">
+                            <span wicket:id="actionTitle"/>
+                        </button>
+                    </span>
+                </span>
+            </div>
+            <!--<div style="width:220px; padding: 5px;display: inline-block" class="content">-->
+                <!--<div>-->
+                    <!--<a wicket:id="markRead" style="float: right; padding: 0px !important; border-width: 0px !important;" class="icon-remove pull-right" id="markRead76" href="javascript:;"></a>-->
+                <!--</div>-->
+                <!--<span class="photo" style="display: inline-flex;float: left;">-->
+                    <!--<img class="profilePicture" wicket:id="photo" src="./userImage?file=OwgQaRycEiJTFpK_medium">-->
+                <!--</span>-->
+                <!--<span class="title" style="-->
+    <!--float: left;-->
+<!--">-->
+                    <!--<span wicket:id="title" class="from">hassan nasr</span>-->
+                <!--</span>-->
+  <!--<span wicket:id="realStars" style="-->
+    <!--float: left;-->
+    <!--clear: right;-->
+<!--"><wicket:panel>-->
+      <!--<span class="realStars" wicket:id="stars" size="20" style="height: 20px; width: 100px; background-size: 20px; background-position: 0px -20px;"><span style="width: 100px; height: 20px; background-size: 20px;"></span></span>-->
+  <!--</wicket:panel></span>-->
+                    <!--<span wicket:id="message" style="-->
+    <!--display: block;-->
+    <!--float: left;-->
+    <!--clear: left;-->
+<!--">hey hehe</span>-->
+                <!--<span class="message" style="-->
+    <!--display: table-row-group;-->
+    <!--float: right;-->
+<!--">-->
+
+                    <!---->
+                    <!--<span wicket:id="actions" id="actions93">-->
+                        <!--<button class="btn red pull-right mini" wicket:id="action1" id="action175">-->
+                            <!--<span wicket:id="actionTitle">Reply</span>-->
+                            <!--<img src="./wicket/resource/com.noktiz.ui.web.behavior.IndicatingBehavior/ajax-loader2-ver-1420708494267.gif" style="display:none; width: 17px; height: 17px" id="action175_indicator"></button>-->
+                    <!--</span>-->
+                <!--</span>-->
+            <!--</div>-->
+            <wicket:child/>
+        </wicket:panel>
+    </body>
+</html>

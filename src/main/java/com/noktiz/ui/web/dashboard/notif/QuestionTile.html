@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>OtherFriendList</title>
+</head>
+<body>
+<wicket:panel>
+    <div wicket:id="feedback"/>
+    <form wicket:id="form">
+        <div wicket:id="wmc" class="tile mytile noMargin">
+            <input type="checkbox" wicket:id="select" style="display: none"/>
+
+            <div class="corner"/>
+            <div class="check"/>
+            <div class="tile-body ">
+                <a wicket:id="imgLink">
+                    <img style="width: 80px;height: 80px;" wicket:id="img" class=" profilePicture img " alt=""/>
+                </a>
+
+                <div class="pull-right">
+                    <span class="label label-info" wicket:id="commonFriend"/>
+                    <span class="label label-success" wicket:id="period"/>
+                </div>
+                <a wicket:id="titleLink" style="display: inline">
+                    <h4 wicket:id="title" data-placement="bottom"
+                        style="display: block;/*max-height: 1em;*/overflow: hidden;line-height: normal;text-overflow: ellipsis;white-space: nowrap;"></h4>
+                </a>
+
+                <div style="clear: right" class="sls norad">
+                    <a wicket:id="descLink" class="descLink" style="display: inline; overflow-wrap: break-word">
+                        <span wicket:id="desc" class=""></span>
+                    </a>
+                    <textarea class="span12 m-warp" wicket:id="inputbox"/>
+                </div>
+            </div>
+            <div class="tile-object ">
+
+                <div class="name">
+                    <a wicket:id="subtitleLink">
+                        <span wicket:id="subtitle"/>
+                    </a>
+                </div>
+                        <span class="pull-right btn-group">
+                            <span wicket:id="actions" class="  ">
+                                <a wicket:id="action" class="btn ">
+                                    <span wicket:id="actionTitle"/>
+                                </a>
+                            </span>
+                            <wicket:enclosure child="otherActionsList">
+                                    <a class="btn dropdown-toggle" href="#" data-toggle="dropdown">
+                                        <i class="icon-angle-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li wicket:id="otherActionsList">
+                                            <a wicket:id="actionLink">
+                                            </a>
+                                        </li>
+                                    </ul>
+                            </wicket:enclosure>
+                        </span>
+            </div>
+        </div>
+    </form>
+</wicket:panel>
+</body>
+</html>

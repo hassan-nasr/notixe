@@ -1,0 +1,17 @@
+.frontInfoBox{
+    margin:auto;
+    height: 500px;
+    width:  300px !important;
+    display: inline-block;
+    float: left;
+}
+
+body.background{
+    /*background-color: #d3d3d3;*/
+    background: linear-gradient(-30deg,#7f7f7f, #545454) no-repeat center center fixed !important; /* Standard syntax */
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+
+}

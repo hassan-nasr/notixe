@@ -1,0 +1,56 @@
+/*textarea, input[type="text"], input[type="password"], input[type="datetime"],
+input[type="datetime-local"], input[type="date"], input[type="month"],
+input[type="time"], input[type="week"], input[type="number"],
+input[type="email"], input[type="url"], input[type="search"], input[type="tel"],
+input[type="color"], .uneditable-input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 1px solid #9DACCC;
+    outline: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 3px 5px 4px 5px;
+    white-space: nowrap;
+    font: 13px "lucida grande", tahoma, verdana, arial, sans-serif;
+    line-height: 13px;
+    height: auto;
+}
+
+input, textarea, .uneditable-input {
+width: 170px;
+}
+
+
+.input-mini {
+  width: 50px;
+}
+
+.input-small {
+  width: 90px;
+}
+
+.input-medium {
+  width: 150px;
+}
+
+.input-large {
+  width: 200px;
+}
+
+.input-xlarge {
+  width: 250px;
+}
+
+.input-xxlarge {
+  width: 530px;
+}
+
+select {
+width: 185px;
+background-color: #FFF;
+border: 1px solid #CCC;
+}*/

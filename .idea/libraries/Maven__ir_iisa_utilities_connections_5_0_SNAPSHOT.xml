@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ir.iisa.utilities:connections:5.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ir/iisa/utilities/connections/5.0-SNAPSHOT/connections-5.0-20140920.195200-16.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/ir/iisa/utilities/connections/5.0-SNAPSHOT/connections-5.0-20140920.195200-16-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/ir/iisa/utilities/connections/5.0-SNAPSHOT/connections-5.0-20140920.195200-16-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

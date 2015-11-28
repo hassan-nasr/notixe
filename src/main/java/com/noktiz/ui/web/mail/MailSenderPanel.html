@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
+<body>
+    <form wicket:id="form">
+        <span class="row-fluid">
+            <span class="span6" style="margin-bottom: 10px;">
+                <input type="text" class="span12" wicket:id="receiver" placeholder="Receiver Email"/>
+            </span>
+            <span class="span6">
+                <input type="text" class="span12" style="height: 34px" wicket:id="title" placeholder="Title"/>
+            </span>
+        </span>
+        <table>
+            <tr>
+                <td>
+                    <label> html: </label> <br/>
+                    <textarea class="span12 m-wrap" style="resize: none; height: 400px;" wicket:id="html"> </textarea>
+                </td>
+                <td>
+                    <label> text: </label> <br/>
+                    <textarea class="span12 m-wrap" style="resize: none; height: 400px;" wicket:id="text"> </textarea>
+                </td>
+            </tr>
+        </table>
+        <!--<span class="btn-group">-->
+        <a wicket:id="send" class="btn green"> Send </a>
+        <a wicket:id="preview" class="btn green"> Preview </a> <br/>
+        <div wicket:id="HTMLPreview"></div>
+        <!--</span>-->
+    </form>
+</body>
+</html>

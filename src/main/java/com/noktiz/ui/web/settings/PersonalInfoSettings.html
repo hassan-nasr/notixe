@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Personal Info</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="form" class="horizontal-form">
+                <h3 class="form-section">
+                    <wicket:message key="PersonalInformation"/></h3>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label" for="firstName">
+                                <wicket:message key="FirstName"/></label>
+                            <div class="controls">
+                                <input type="text" id="firstName" wicket:id="firstName" class="m-wrap span12"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/span-->
+                    <div class="span6 ">
+                        <div class="control-group">
+                            <label class="control-label" for="lastName">
+                                <wicket:message key="LastName"/></label>
+                            <div class="controls">
+                                <input type="text" id="lastName" wicket:id="lastName" class="m-wrap span12"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/span-->
+                </div>
+                <!--/row-->
+                <div class="row-fluid">
+                    <div class="span6 ">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <wicket:message key="Gender"/></label>
+                            <div class="controls">
+                                <select wicket:id="gender" class="m-wrap span12">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/span-->
+                    <div class="span6 ">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <wicket:message key="DateOfBirth"/></label>
+                            <div class="controls">
+                                <input type="text" wicket:id="birthDay"class="m-wrap span12 date-picker" placeholder="dd/mm/yy"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6 ">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <wicket:message key="TimeZone"/></label>
+                            <div class="controls">
+                                <select wicket:id="timezone" class="m-wrap span12">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6 ">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <wicket:message key="Language"/></label>
+                            <div class="controls">
+                                <select wicket:id="local" class="m-wrap span12">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <a wicket:id="submit" type="submit" style="margin-bottom: 7px;" class="btn green"><i class="icon-ok"></i>
+                        <wicket:message key="Save"/></a>
+                    <div class="pull-right" wicket:id="getFromFacebook"/>
+                </div>
+            </form>
+        </wicket:panel>
+    </body>
+</html>

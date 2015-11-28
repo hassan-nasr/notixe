@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>RateContextViewEdit</title>
+</head>
+<body>
+<wicket:panel>
+    <form wicket:id="form">
+        <label>
+            <wicket:message key="PublishQuestionIntro"/>
+        </label>
+        <div class="control-group row-fluid">
+            <label class="control-label">
+                <wicket:message key="TitleOfQuestion"/></label>
+            <div class="controls">
+                <input wicket:id="title" type="text" wicket:message="placeholder:TitleOfQuestion" class="m-wrap span12" />
+            </div>
+        </div>
+        <div class="control-group row-fluid">
+            <label class="control-label">
+                <wicket:message key="Description"/></label>
+            <div class="controls">
+                <textarea wicket:id="description"  style="resize: vertical" wicket:message="placeholder:Description" class="m-wrap  span12" />
+            </div>
+        </div>
+        <div class=" row-fluid ">
+            <div class="control-group span4">
+                <label class="control-label">
+                    <wicket:message key="Language"/></label>
+                <div class="controls">
+                    <select class="small m-wrap" wicket:id="language"></select>
+                </div>
+            </div>
+
+            <div class="control-group span8">
+                <label class="control-label">
+                    <wicket:message key="predefinedQuestion.addTag"/></label>
+                <div class="controls">
+                    <div wicket:id="tag" />
+                </div>
+            </div>
+
+            <div class="control-group">
+
+                <div class="controls">
+                    <input type="checkbox" name="remember" value="1" wicket:id="anonymous"/> <span  ><wicket:message
+                        key="anonymous"/> </span>
+                </div>
+            </div>
+
+
+            <!--<div class="form-actions">-->
+                <button type="submit" class="btn blue pull-right"  wicket:id="submit"><i class="icon-ok"></i>
+                    <wicket:message key="publish"/></button>
+            <!--</div>-->
+
+
+        </div>
+    </form>
+</wicket:panel>
+</body>
+</html>

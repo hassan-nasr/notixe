@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta content="images/dna.png" itemprop="image">
+	<title>Notixe</title>
+	<!--<link href="bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+	<!--<link href="style.css" rel="stylesheet">-->
+	<!--<link href="form.css" rel="stylesheet">-->
+</head>
+<body>
+	<div wicket:id="feedback"></div>
+	<!-- SIGN IN MODEL : START -->
+	<div class="modal fade bs-example-modal-sm hidden-xs hidden-sm" id="signModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <div class="form-wrapper">
+			  <h1>Sign In</h1>
+			  <form wicket:id="loginForm">
+			    <div class="form-item">
+			      <label for="email"></label>
+			      <input wicket:id="LIemail" type="email" name="email" required="required" placeholder="Email Address"/>
+			    </div>
+			    <div class="form-item">
+			      <label for="password"></label>
+			      <input wicket:id="LIpassword" type="password" name="password" required="required" placeholder="Password"/>
+			    </div>
+			    <div class="button-panel">
+			      <input  type="submit" class="button" title="Sign In" value="Sign In"/>
+			    </div>
+			  </form>
+			  <div class="form-footer">
+			    <p><a href="#">Forgot password?</a></p>
+			  </div>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- SIGN IN MODEL : END -->
+	<!-- REGIN MODEL : START -->
+	<div class="modal fade bs-example-modal-sm" id="regModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <div class="form-wrapper">
+			  <h3 wicket:id="feedbackHeader">Sign In</h3>
+			  <h5 wicket:id="feedbackBody">Your account created successfully please follow the instructions we've sent to hne1991@gmail.com to verify your account</h5>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- REGIN MODEL : END -->
+	<!-- NAVBAR : START -->
+	<header class="navbar navbar-fixed-top bs-docs-nav" id="top" role="banner">
+	  <div class="container">
+	    <div class="navbar-header outlinebtn">
+		    	<a href="" class="navbar-brand center-block outlinebtn-in">Notixe</a>
+	    </div>
+	    <nav id="bs-navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm sign-in-btn">
+	        <li><a href="#" data-toggle="modal" data-target="#signModel">Sign in</a></li>
+	      </ul>
+	    </nav>
+	  </div>
+	</header>
+	<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+	  <div class="container">
+	    <div class="navbar-header">
+	    </div>
+	    <nav id="bs-navbar" class="collapse navbar-collapse">
+	    </nav>
+	  </div>
+	</header>
+	<!-- NAVBAR :  END  -->
+	<!-- BODY : START -->
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row jojo">
+					<div class="col-md-12">
+				<img wicket:id="logo" src="images/notixe.gif" class="img-responsive center-block notixe-first-img">
+					</div>
+					<div class="col-md-12">
+						<div class="jumbotron text-center subjojo">
+							<h3><wicket:message key="slogan" /></h3>
+							<div class="sub">
+								<a href="#sign-up-link" class="sign-up-link">sign up</a>
+								.
+								<a href="#learn-more-link" class="learn-more-link">learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- style="margin-top:70px;padding-top:30px;" -->
+			<div class="col-md-12">
+				<div class="row sign-inn">
+					<div class="col-md-6">
+						<div class="jumbotron jumbotron2 hidden-xs hidden-sm">
+							<h3><wicket:message key="shortIntro"/></h3>
+						</div>
+					</div>
+					<div id="sign-in" class="col-md-6 hidden-print hidden-md hidden-lg">
+						<div class="form-wrapper">
+						  <h1>Sign In</h1>
+		         		  <form wicket:id="loginForm2">
+						    <div class="form-item">
+						      <label for="email"></label>
+                              <input wicket:id="LIemail" type="email" name="email" required="required" placeholder="Email Address"/>
+						    </div>
+						    <div class="form-item">
+						      <label for="password"></label>
+                              <input wicket:id="LIpassword" type="password" name="password" required="required" placeholder="Password"/>
+						    </div>
+						    <div class="button-panel">
+                              <input type="submit" class="button" title="Sign In" value="Sign In"/>
+						    </div>
+						  </form>
+						  <div class="form-footer">
+						    <p><a href="#">Forgot password?</a></p>
+						  </div>
+						</div>
+					</div>
+					<div class="col-md-6" id="sign-up-link">
+						<div class="form-wrapper">
+						  <h3>Sign Up</h3>
+				  <form wicket:id="registerForm">
+				  	<div wicket:id="facebookConnect" class="button-panel">
+				      <input type="submit" class="facebook" title="facebook" value="Enter with facebook"/>
+						    </div>
+				    <div wicket:id="googleConnect" class="button-panel">
+				      <input type="submit" class="google-plus" title="google-plus" value="Enter with Google"/>
+						    </div>
+						  	<div class="row">
+						  		<div class="col-md-6">
+								    <div class="form-item">
+								      <label for="firstName"></label>
+						      <input wicket:id="RfirstName" type="text" name="firstname" required="required" placeholder="First Name"/>
+								    </div>
+							    </div>
+							    <div class="col-md-6">
+								    <div class="form-item">
+								      <label for="lastName"></label>
+						      <input wicket:id="RlastName" type="text" name="lastname" required="required" placeholder="Last Name"/>
+								    </div>
+							    </div>
+						    </div>
+						    <div class="form-item">
+						      <label for="email"></label>
+				      <input wicket:id="Remail" type="email" name="email" required="required" placeholder="Email Address"/>
+						    </div>
+						    <div class="form-item">
+						      <label for="password"></label>
+				      <input wicket:id="Rpassword" type="password" name="password" required="required" placeholder="Password"/>
+						    </div>
+						    <div class="form-item">
+						      <label for="repeat-password"></label>
+				      <input wicket:id="RRpassword" type="password" name="repeat-password" required="required" placeholder="Repeat Password"/>
+						    </div>
+					  <div class="form-item">
+						  <div wicket:id="captcha" ></div>
+						  <!--<input wicket:id="RRpassword" type="password" name="repeat-password" required="required" placeholder="Repeat Password"></input>-->
+					  </div>
+						    <div class="button-panel">
+				      <input wicket:id="ajaxRegister" type="submit" class="button" title="Sign Up" value="Sign Up"/>
+                    <!--<input class="button" title="Sign Up" value="Sign Up" data-toggle="modal" data-target="#regModel"></input>-->
+
+							</div>
+					  <div>
+						  Registering means you're agree to The <a wicket:id="termsOfUse">Term of Use</a> and <a wicket:id="privacyPolicy">Privacy Policy</a>
+					  </div>
+						  </form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="row" id="learn-more-link" style="margin-top:20px;">
+					<div class="col-md-12">
+						<div class="descs">
+							<h1 class="text-center how-it-work" >How it works</h1>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="descs img1">
+							<img id="img1" src="images/dna.png" class="img-responsive center-block description">
+							<h3 class="text-center" ><wicket:message key="feature1title"/></h3>
+							<p class="lead text-center"  ><wicket:message key="feature1body"/></p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="descs">
+							<img src="images/dna.png" class="img-responsive center-block description">
+							<h3 class="text-center"  ><wicket:message key="feature2title"/></h3>
+							<p class="lead text-center"  ><wicket:message key="feature2body"/></p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="descs">
+							<img src="images/dna.png" class="img-responsive center-block description">
+							<h3 class="text-center"  ><wicket:message key="feature3title"/></h3>
+							<p class="lead text-center"  ><wicket:message key="feature3body"/></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h6 class="pull-left">NOTIXE &copy</h6>
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<h6 class="pull-right">2015 Notixe Group. All rights reserved.</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- BODY : END -->
+
+	<!--<script src="jquery.js"></script>-->
+	<!--<script src="bootstrap-3.3.5/js/bootstrap.min.js"></script>-->
+	<!--<script src="app.js"></script>-->
+</body>
+</html>

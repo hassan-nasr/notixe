@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <wicket:head>
+        <title>Send Message</title>
+    </wicket:head>
+</head>
+<body>
+<wicket:panel>
+    <form wicket:id="form">
+        <span class="row-fluid">
+            <span class="span6" style="margin-bottom: 10px;">
+                <select type="text" class="span12" wicket:id="receiver" placeholder="Receiver Name"/>
+            </span>
+            <span class="span6">
+                <input type="text" class="span12" style="height: 34px" wicket:id="title" placeholder="Title"/>
+            </span>
+        </span>
+        <textarea class="span12 m-wrap" style="resize: none; height: 400px;" wicket:id="message"/>
+        <span wicket:id="dir"/>
+        <span class="btn-group">
+            <a wicket:id="send" class="btn green">
+                <wicket:message key="Send"/></a>
+            <a wicket:id="save" class="btn ">
+                <wicket:message key="SaveDraft"/></a>
+            <a wicket:id="discard" class="btn red-stripe">
+                <wicket:message key="Discard"/></a>
+        </span>
+    </form>
+
+</wicket:panel>
+</body>
+</html>

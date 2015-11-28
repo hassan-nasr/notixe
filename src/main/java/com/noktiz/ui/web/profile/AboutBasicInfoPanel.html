@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Protected Panel</title>
+</head>
+<body>
+<wicket:panel>
+    <div>
+        <img wicket:id="profilePicture" class="profilePicture" style=" width: 200px; float: left">
+
+        <div class="social-icons" style="padding-left: 20px; float: left">
+            <span wicket:id="feedback"/>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <h3 wicket:id="nameLabel" style="float: left"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <wicket:enclosure child="thankCount">
+                <span style="display: inline-block;" class="">
+                    <h1 wicket:id="thankCount" style="line-height: 1px;"/>
+                    <wicket:message key="thanksFrom"/>
+                    <span wicket:id="userCount" class=""/>
+                    <wicket:message key="persons"/>
+                </span>
+                        </wicket:enclosure>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a wicket:id="facebookLink" style="float: left; margin: 15px 0px 0px 15px; ">
+                            <em class="facebook"
+                                style="width: 38px; height: 38px ;display: block; background-position: 0 -38px; float: left"/>
+                            <label style="float: left; margin-top: 3px">
+                                <wicket:message key="Verified"/>
+                            </label>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label wicket:id="email"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label wicket:id="mutualTrust"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+            <span wicket:id="action" class="btn-group pull-right">
+                <wicket:enclosure child="addBack">
+                <span>
+                    <a class="btn green  mini" wicket:id="addBack">
+                        <span wicket:id="addBackMessage"/>
+                    </a>
+                    </span>
+                </wicket:enclosure>
+                <wicket:enclosure child="follow">
+                <span>
+                    <a class="btn red mini" wicket:id="follow">
+                    </a>
+                </span>
+                </wicket:enclosure>
+            </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</wicket:panel>
+</body>
+</html>

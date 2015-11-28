@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd"  
+      xml:lang="en"  
+      lang="en"> 
+    <head> 
+    </head> 
+    <body>
+        <wicket:panel>
+            <div class="header navbar navbar-inverse navbar-fixed-top norad">
+                <div class="navbar-inner hor-menu norad"  >
+                    <div class="container norad" wicket:id="header">
+                        <a class="nav pull-left" href="/" style="margin:0px;">
+                            <img wicket:id="logo" style="height: 30px; margin-top: 5px;"/>
+                        </a>
+                        <form  class="form-vertical" method="post"  wicket:id="loginForm">
+                            <ul class="nav pull-right" style="clear:none !important ;">
+
+                                <li  style="float: right">
+                                    <a wicket:id="register" style="padding-top: 6px; padding-bottom: 6px; margin-top: 5px" >
+                                        Register
+                                    </a>
+                                </li>
+                                <li  style="float: right">
+                                    <div style="float: left;  margin-top: 5px" >
+                                        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                                        <label class="control-label visible-ie8 visible-ie9"><wicket:message key="Email"/></label>
+                                        <div class="controls">
+                                            <div class="input-icon left">
+                                                <i class="icon-user"></i>
+                                                <input class="m-wrap placeholder-no-fix small , noradR" style="color: white" type="text" autocomplete="off" wicket:message="placeholder:Email" name="email" wicket:id="LIemail"/>
+                                                <input  type="hidden" name="redirect" wicket:id="redirect" id/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="float: left; margin-top: 5px">
+                                        <label class="control-label visible-ie8 visible-ie9">
+                                            <wicket:message key="Password"/></label>
+                                        <div class="controls">
+                                            <div class="input-icon left">
+                                                <i class="icon-lock"></i>
+                                                <input class="m-wrap placeholder-no-fix small norad"  style="color: white" type="password" autocomplete="off" wicket:message="placeholder:Password" name="password" wicket:id="LIpassword"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <button type="submit" class="btn green pull-right noradL" style="float: left">
+                                           <wicket:message key="Login"/> <i class="m-icon-swapright m-icon-white"></i>
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

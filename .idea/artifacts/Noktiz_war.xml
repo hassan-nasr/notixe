@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Noktiz:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="notixe-0.2.2.war">
+      <element id="artifact" artifact-name="Noktiz:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <!--    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/style-metro.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+        <link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="assets/plugins/select2/select2_metro.css" />-->
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <!--<link href="assets/css/pages/login.css" rel="stylesheet" type="text/css"/>-->
+    <!-- END PAGE LEVEL STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="">
+<wicket:panel>
+
+<div class="login">
+<div wicket:id="feedback"/>
+<!-- END LOGO -->
+<!-- BEGIN LOGIN -->
+<div class="content">
+    <div wicket:id="timeZone"/>
+    <!-- BEGIN LOGIN FORM -->
+    <form class="form-vertical login-form" action="index.html" method="post" wicket:id="loginForm">
+        <h3 class="form-title" style="text-align: center">
+            <wicket:message key="LoginToYourAccount"/></h3>
+
+        <div class="alert alert-error hide">
+            <button class="close" data-dismiss="alert"></button>
+            <span>Please check email or password again</span>
+        </div>
+        <div class="control-group">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">
+                <wicket:message key="Email"/></label>
+
+            <div class="controls">
+                <div class="input-icon left">
+                    <i class="icon-user"></i>
+                    <input class="m-wrap placeholder-no-fix" type="email" autocomplete="off" wicket:message="placeholder:Email"
+                           name="email" wicket:id="LIemail"/>
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label visible-ie8 visible-ie9">
+                <wicket:message key="Password"/></label>
+
+            <div class="controls">
+                <div class="input-icon left">
+                    <i class="icon-lock"></i>
+                    <input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" wicket:message="placeholder:Password"
+                           name="password" wicket:id="LIpassword"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="control-group">-->
+
+            <!--<div class="controls">-->
+                <!--<input class="m-wrap placeholder-no-fix" type="checkbox" autocomplete="off" placeholder="Remmember me"-->
+                       <!--name="staySignedIn" wicket:id="LIrememberMe"/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="form-actions">
+            <div class="controls">
+            <input type="checkbox" name="remember" value="1" wicket:id="LIrememberMe"/> <span style="color :white" ><wicket:message
+                    key="RememberMe"/> </span>
+            </div>
+            <button type="submit" class="btn green pull-right">
+                <wicket:message key="Login"/> <i class="m-icon-swapright m-icon-white"></i>
+            </button>
+            <!--<a href=";"class="btn pull-right" type="button" id="forget-password">Forget Password</a>-->
+        </div>
+        <a href="javascript:;" style="color: white" wicket:id="forgetPassword">
+            <wicket:message key="ForgetMyPassword"/></a>
+
+        <div class="create-account">
+            <p>
+                <!--Don't have an account yet ?&nbsp;-->
+                <a href="javascript:;" id="register-btn" class="btn blue btn-block">
+                    <wicket:message key="CreateAnAccount"/></a>
+            </p>
+        </div>
+    </form>
+    <!-- END LOGIN FORM -->
+    <!-- BEGIN FORGOT PASSWORD FORM -->
+        <!--<form class="form-vertical forget-form" wicket:id="forgetForm" action="index.html" method="post">
+            <h3 class="form-title">Forget password ?</h3>
+
+            <p>Enter your e-mail address below to reset your password.</p>
+
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        <input class="m-wrap placeholder-no-fix" type="email" autocomplete="off" placeholder="Email"
+                               name="email" wicket:id="Femail"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="back-btn" class="btn">
+                    <i class="m-icon-swapleft"></i> Login
+                </button>
+                <button type="submit" class="btn green pull-right" wicket:id="forgetFormSubmit" id="forgetFormSubmit">
+                    Reset <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        </form>-->
+        <!-- END FORGOT PASSWORD FORM -->
+        <!-- BEGIN REGISTRATION FORM -->
+        <form class="form-vertical register-form" action="index.html" method="post" wicket:id="registerForm">
+            <h3 class="form-title">
+                <wicket:message key="Register"/></h3>
+
+            <p>
+                <wicket:message key="PleaseFillTheFieldsBelow"/>:</p>
+
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">
+                    <wicket:message key="FirstName"/></label>
+
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-font"></i>
+                        <input type="text" class="m-wrap placeholder-no-fix" wicket:message="placeholder:FirstName" name="firstName"
+                               wicket:id="RfirstName"/>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">
+                    <wicket:message key="LastName"/></label>
+
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-font"></i>
+                        <input type="text" class="m-wrap placeholder-no-fix" wicket:message="placeholder:LastName" name="lastName"
+                               wicket:id="RlastName"/>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">
+                    <wicket:message key="Email"/></label>
+
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        <input class="m-wrap placeholder-no-fix" type="email" wicket:message="placeholder:Email" name="email"
+                               wicket:id="Remail"/>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">
+                    <wicket:message key="Password"/></label>
+
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-key"></i>
+                        <input class="m-wrap placeholder-no-fix" type="password" id="register_password"
+                               wicket:message="placeholder:Password" name="password" wicket:id="Rpassword"/>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">
+                    <wicket:message key="RRpassword"/></label>
+
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-key"></i>
+                        <input class="m-wrap placeholder-no-fix" type="password" wicket:message="placeholder:RePasswordMessage"
+                               name="rpassword" wicket:id="RRpassword"/>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <div class="checker"><span><input type="checkbox" class="checkbox" name="tnc" wicket:id="acceptTerm" value="1"/> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span></div>
+                    </label>
+                    <div id="register_tnc_error"></div>
+                </div>
+            </div>-->
+            <div id="captchaPanel" wicket:id="captcha" style="overflow: hidden;width: 100%;"/>
+            <div class="control-group"
+                 style="background-color:rgb(249, 249, 249);color:#000000; display: inline-block;width: 100%">
+                <!--<div class="controls">
+                    <label class="checkbox">
+                        <div class="checker"><input type="checkbox" name="tnc"  wicket:id="acceptTerm" class="checkbox"/> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
+                    </label>
+                    <div id="register_tnc_error"></div>
+                </div>-->
+                <input style="height: 27px;width: 27px;margin: 14px 12px 14px 14px; display: inline-block; float: left"
+                       type="checkbox" wicket:id="acceptTerm"
+                       class="checker">
+            <span style="display: block; margin-top:7px"> <wicket:message key="IAgreeTo"/>
+                <a wicket:id="termsOfUse" href="#" style="color: #e25046">
+                    <wicket:message key="TermOfUse"/></a> <wicket:message key="and"/>
+                <a wicket:id="privacyPolicy" href="#" style="color: #e25046">
+                    <wicket:message key="PrivacyPolicy"/></a>
+            </span>
+                <!--<label class="controls checkbox">
+                    <div class="checkbox"><span><input type="checkbox"  wicket:id="acceptTerm" class="checker"></span></div> I agree to the <a href="#" style="color: #AFE2D2">Terms of Use</a>
+                </label>-->
+                <div id="register_tnc_error"></div>
+            </div>
+            <span style="color: #8b6e23">Notice that this site is still in ALPHA. (V0.2.0)</span>
+
+            <div class="form-actions">
+                <button id="register-back-btn" type="button" class="btn">
+                    <i class="m-icon-swapleft"></i>
+                    <wicket:message key="Login"/>
+                </button>
+                <a wicket:id="ajaxRegister" type="submit" id="register-submit-btn" class="btn green pull-right">
+                    <wicket:message key="SignUp"/> <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </form>
+
+
+    <hr/>
+    <div wicket:id="facebookConnect"/>
+    <div wicket:id="googleConnect"/>
+    <span style="display: block; margin-top:7px"> <wicket:message
+            key="BySigningIn"/>
+                <a wicket:id="termsOfUse2" href="#" style="color: #e25046">
+                    <wicket:message key="TermOfUse"/></a> <wicket:message key="and"/>
+                <a wicket:id="privacyPolicy2" href="#" style="color: #e25046">
+                    <wicket:message key="PrivacyPolicy"/></a>
+            </span>
+
+    <!-- END REGISTRATION FORM -->
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        App.init();
+        Login.init();
+    });
+</script>
+</div>
+<!-- END JAVASCRIPTS -->
+</wicket:panel>
+
+</body>
+<!-- END BODY -->
+</html>

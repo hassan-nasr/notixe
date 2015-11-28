@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>PersonList</title>
+        <wicket:head>
+        </wicket:head>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="form" style="widows: 100%;" >
+                <div wicket:id="wmc" style="border: 10px red">
+                    <span wicket:id="feedbackwmc">
+                        <span wicket:id="feedback"/>
+                    </span>
+                    <div style="display: table;" class="btn-group">
+
+                        <input class="m-wrap large pull-left" type="text" wicket:id="search" placeholder="Search in the fallowing cards"/>
+                        <span wicket:id="generalActions" class="pull-right">
+                            <a class="btn " wicket:id="generalAction">
+                                <span wicket:id="generalActionTitle"/>
+                            </a>
+                        </span>
+                    </div>
+                    <div  class="tiles">
+                        <label wicket:id="emptyMessage" style="margin:auto; display: block"/>
+                        <div wicket:id="list" >
+                            <!--<div wicket:id="tile" />-->
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </wicket:panel>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>SendMessage</title>
+    </head>
+    <body>
+        <wicket:panel>
+
+            <div wicket:id="feedback"/>
+            <div class="">
+                <div class="" style="display: block">
+                    <form wicket:id="rateForm">
+                        <span class="row-fluid">
+                            <span class="span12" style="display: inline-block">
+                                <div style="margin-top: 1px; float: left; width: 100%">
+
+                                    <div class="row-fluid"  >
+                                        <textarea type="text"  maxlength="250" 
+                                                  style="float: left; padding-top: 4px;background-color: rgba(0,0,0,0);"
+                                                  wicket:message="placeholder:optionalComment" class="span12 m-warp"
+                                                  wicket:id="comment"/>
+                                        <span wicket:id="commentRO" />
+
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="" style="text-align: center; width: 180px">
+                                <!--<span class="label span12" style="min-height:initial">Remember that you are anonymous</span>-->
+                                <div style="display: inline-block; min-width: 165px" >
+                                    <!--<div class="span6">-->
+                                    <!--<input type="text" class="m-wrap span12" placeholder="Receiver" wicket:id="receiver"/>-->
+                                    <!--</div>-->
+                                    <div style="">
+                                        <input type="text" wicket:id="rate" class="rating" min=1 max=5 step=1 data-size="sm"  data-show-caption="false" />
+                                    </div>
+
+                                </div>
+                            </span>
+
+                            <span class="" style="">
+                                <a wicket:id="submitRate" class=" btn green" style="">
+                                    <wicket:message key="anonymousRateButton"/></a>
+                                <!--</div>-->
+                                <span wicket:id="date" class="" style="padding-right: 5px"></span>
+                                <div wicket:id="editInfo" class="pull-right" style="padding-right: 5px"/>
+                            </span>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

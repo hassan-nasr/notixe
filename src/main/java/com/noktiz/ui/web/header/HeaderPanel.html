@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd"  
+      xml:lang="en"  
+      lang="en"> 
+    <head><title>Wicket Example</title></head>
+    <body>
+        <wicket:panel>
+
+            <div class="header navbar navbar-inverse navbar-fixed-top norad">
+                <div class="navbar-inner hor-menu norad">
+                    <div class="container norad" wicket:id="header ">
+                        <a class="nav pull-left" href="/" style="margin:0px;">
+                            <img class="logo" wicket:id="logo" style="height: 30px; margin-top: 5px;"/>
+                        </a>
+                        <!--<a wicket:id="refreshNotif" style="display:none;" >  </a>-->
+                        <ul  class="nav pull-right" style="clear:none !important ;">
+
+                            <li class="dropdown user" style="float: right;">
+
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu" style="">
+                                    <!--<li class="pull-left">-->
+                                        <!--<img style="width:150px; height:150px; float:left;display: table-row;" wicket:id="mybigphoto" />-->
+                                    <!--</li>-->
+
+                                    <li class="pull-left ">
+                                        <a wicket:id="settings" href="/settings" style="vertical-align: super;">
+                                            <i class="icon-cog"></i>
+                                            <wicket:message key="Settings"/>
+                                        </a>
+                                    </li>
+
+                                    <li class="pull-left ">
+                                        <a wicket:id="logout"><i class="icon-key"></i>
+                                            <wicket:message key="LogOut"/></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li  style="float: right">
+                                <a href="/profile" style="padding-top: 6px; padding-bottom: 6px;" >
+                                    <img class="profilePicture" style="width:30px !important; height:30px !important;" wicket:id="myphoto"/>
+                                    <span class="hideSmall" wicket:id="name"></span>
+                                </a>
+                            </li>
+                            <li wicket:id="notifications" class="dropdown" style="float: right;" id="header_notification_bar">
+                                <a href="#" class="dropdown-toggle"  data-toggle="dropdown">
+                                    <i class="icon-bell"></i>
+                                    <span wicket:id="notifCount" class="badge"></span>
+                                </a>
+                                <ul class="dropdown-menu extended inbox">
+
+                                    <li>
+                                        <a wicket:id="seen">
+                                            <wicket:message key="markAllRead"/></a>
+                                        <p wicket:id="nonotif">
+                                            <wicket:message key="NoNotification"/></p>
+                                    </li>
+                                    <div id="notifcontainer" onclick="event.stopPropagation()">
+                                        <div id="notifinner">
+                                            <li wicket:id="notifs">
+                                                <!--<a style="cursor: default">-->
+                                                <div wicket:id="notif" />
+                                                <!--</a>  -->
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class=" " style="float: right;" wicket:id="friendsLI">
+                                <a class="" href="/friends"><i class="icon-group"/><span class="hideVerySmall"> <wicket:message
+                                        key="Friends"/></span></a>
+                            </li>
+                            <li class="" style="float: right;" wicket:id="threadLI">
+                                <a class="" href="/thread"><i class="icon-envelope"/><span class="hideVerySmall"> <wicket:message
+                                        key="Conversations"/></span></a>
+                            </li>
+                            <li class="" style="float: right;" wicket:id="ratingLI">
+                                <a class="popovers" href="/ratings" ><i class="icon-question-sign"/><span class="hideVerySmall"> <wicket:message
+                                        key="QuestionAndAnswers"/></span></a>
+                            </li>
+                            <li class="" style="float: right;" wicket:id="homeLI">
+                                <a class="popovers" href="/home" ><i class="icon-home"/><span class="hideVerySmall"> <wicket:message
+                                        key="Home"/></span></a>
+                            </li>
+                            <!--<li class="" style="float: right;" >
+                                <a  href="/rateManage" ><i class="icon-star-empty"/><span class="hideVerySmall">RateManage</span></a>
+                            </li>-->
+                            <script>
+
+                            </script>
+                        </ul>
+                        <ul class="nav pull-right">
+
+                        </ul>   
+                    </div>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>RateOverViews</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div wicket:id="feedback"/>
+            <div class="alert alert-block alert-info fade in portlet-body form" style="margin-bottom: 2px; padding: 5px">
+                <div class="row-fluid">
+                    <h4 class="pull-left" wicket:id="title" style="margin: 10px; min-width: 100px" />
+                    <div wicket:id="persons">
+                        <img wicket:id="more" class="popovers pull-left"  data-trigger="hover"  data-placement="bottom" data-content="" style="width: 40px; height: 40px"/>
+                        <div wicket:id="item" />
+                    </div>
+                    <a wicket:id="add" class="btn green pull-right"><wicket:message key="IEndorseToo"/></a>
+                    <a wicket:id="remove" class="btn remove pull-right"><wicket:message key="RemoveEndorse"/></a>
+                    <a wicket:id="removeFromProfile" class="btn red remove pull-right"><wicket:message key="RemoveFromProfile"/></a>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

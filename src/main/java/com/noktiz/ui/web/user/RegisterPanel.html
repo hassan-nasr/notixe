@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>RegisterPanel</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div wicket:id="feedback"/>
+            <form wicket:id="form">
+                <wicket:message key="FirstName"/>: <input type="text" wicket:id="firstName"/>
+                <wicket:message key="LastName"/>: <input type="text" wicket:id="lastName"/>
+                <!--birthday: <input type="text" wicket:id="birthday"/>-->
+                <wicket:message key="Email"/>: <input type="text" wicket:id="email"/>
+                <wicket:message key="Password"/>: <input type="password" wicket:id="password"/>
+                <wicket:message key="TimeZone"/>: <select wicket:id="timezone"/>
+                <input type="submit" value="submit"/>
+            </form>
+            <div wicket:id="registerWithFacebook" ></div>
+        </wicket:panel>
+    </body>
+</html>

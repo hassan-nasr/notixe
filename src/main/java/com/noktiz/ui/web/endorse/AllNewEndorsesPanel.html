@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>RateOverViews</title>
+</head>
+<body>
+<wicket:panel>
+    <a wicket:id="showRemoved" class="btn yellow">
+    </a>
+    <div wicket:id="wmc">
+         <div wicket:id="newEndorses" class="span12 alert alert-block alert-info fade in newEndorse">
+            <div  class="row-fluid">
+                <div  class="span3" >
+                    <div wicket:id="senderImage" style="float: left"/>
+                </div>
+
+                <div style="float: right" class="span9">
+                    <strong wicket:id="senderName" />
+                    <wicket:message key="EndorsedYouForBeing"/> <strong wicket:id="endorseContext"/>
+                    <div class="row-fluid" >
+                        <a  wicket:id="addToProfile" class="btn green" style="float: right">
+                            <wicket:message key="AddToProfile"/></a>
+                        <!--<div wicket:id="done" class="btn blue" style="float: right;">done</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</wicket:panel>
+</body>
+</html>

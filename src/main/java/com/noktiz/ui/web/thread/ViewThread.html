@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>ViewThread</title>
+</head>
+<body>
+<wicket:panel>
+    <div class="row-fluid">
+        <div class="span8">
+            <div wicket:id="wmc" class="blog-page">
+                <span wicket:id="feedback"/>
+
+                <div class="pull-right" style="display: inline-block;">
+                    <span id="wmcba4" class="pull-right btn-group" style="margin: 0px;">
+                            <a wicket:id="newer" class="tooltips btn mini" data-placement="bottom"
+                               wicket:message="data-original-title:Newer">
+                                <span class="icon-chevron-left"/>
+                            </a>
+                            <a wicket:id="older" class="tooltips btn mini red-stripe " data-placement="bottom"
+                               wicket:message="data-original-title:Older">
+                                <span class="icon-chevron-right"/>
+                            </a>
+                    </span>
+                </div>
+                <span style="display: inline-block; ">
+                    <h3 wicket:id="title" class="pull-left" style="margin:0px !important"/>
+                </span>
+                <hr style="margin-top: 9px !important;margin-bottom: 0px;"/>
+                <!-- 00 -->
+                <div wicket:id="thread" class="media">
+                    <div href="#" style="float:left; margin-right:4px; margin-top:-4px;">
+                        <img wicket:id="image" alt="" class="media-object profilePicture">
+                    </div>
+                    <div class="media-body">
+                        <div style="margin:0px;">
+                            <h4 class="media-heading">
+                                <div wicket:id="sender" style="display: -webkit-inline-box;"/>
+                                <div wicket:id="new" class="label label-important">
+                                    <wicket:message key="NEW"/></div>
+                                <div wicket:id="blocked" class="label label-warning">
+                                    <wicket:message key="Blocked"/></div>
+                                <span class="time">
+                                    <p style="display: inline" wicket:id="sendDate"></p>
+                                    <p style="display: inline">(</p>
+                                    <div style="display: inline" wicket:id="elapseTime"></div>
+                                    <p style="display: inline">)</p>
+                                </span>
+                            </h4>
+                            <div wicket:id="content" style="overflow-wrap: break-word;">
+                                <div wicket:id="sentMessage">
+                                    <p wicket:id="text"/>
+                                </div>
+                                <div wicket:id="draft">
+                                    <div wicket:id="draftPanel"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: 9px !important;margin-bottom: 0px;"/>
+                </div>
+            </div>
+            <div wicket:id="reply"/>
+        </div>
+        <div  class="span4">
+            <div wicket:id="threadInfo"/>
+            <h3 style="text-align: center">
+                <wicket:message key="Attention"/></h3>
+            <ul  class="transparentWhite" style="list-style-type: none;margin:0px;">
+                <li>
+                    <wicket:message key="tip.askToGoVisibleOfficially"/>
+                </li>
+                <hr style="height: 1px;margin: 1px 0;"/>
+                <li>
+                    <wicket:message key="tip.talkAboutYourselves"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</wicket:panel>
+</body>
+</html>

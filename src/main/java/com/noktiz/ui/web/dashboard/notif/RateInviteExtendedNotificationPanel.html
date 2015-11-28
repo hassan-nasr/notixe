@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>RateOverViews</title>
+</head>
+<body>
+<wicket:panel>
+    <!--<ul >-->
+    <div class=" well-small well"  >
+        <div class=" row-fluid" >
+            <div class="span6">
+                <table class="row-fluid"> <tr>
+                    <td class="" style="vertical-align: top; width: 70px;">
+                    <div style="float: left;">
+                        <img wicket:id="image" style="width: 70px"/>
+                    </div>
+                    </td>
+                    <td class="" style="vertical-align:top; width: auto; padding-left: 7px">
+                        <div style="width:100%; display: inline-block">
+                            <div style="float: right">
+                                <input type="checkbox" wicket:id="subscribe" class="switch switch-large" data-on-color="success" data-off-color="default" data-on-text="&nbsp;subscribed&nbsp;&nbsp;&nbsp;" data-off-text=" subscribe "/>
+                                <div style="display: block">
+                                    <div wicket:id="infoSubscribe" style="float: right"/>
+                                </div>
+                            </div>
+                            <span wicket:id="header" style="border-right: 5px"/>
+                            <br>
+                            <h4 wicket:id="title" style="margin-bottom: -20px" />
+                            <br>
+                            <span wicket:id="description" />
+                        </div>
+                    </td>
+                </tr>
+                </table>
+            <div style="padding-left: 10px; display: flex">
+                <div wicket:id="invitees" />
+            </div>
+            </div>
+            <div wicket:id="answer" class="span6" style="padding: 2px"/>
+            </div>
+        <div wicket:id="history" class="accordion noradT">
+            <div class="accordion-group scrollable noradT ">
+                <div class="accordion-heading noradT">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="" wicket:id="accordion-head">
+                        <i class="icon-angle-left"></i>
+                        Previous Ratings
+                    </a>
+                </div>
+                <div class="accordion-body collapse" style="" wicket:id="accordion-body">
+                    <div class="accordion-inner">
+                        <div wicket:id="previousRates" >
+                            <div wicket:id="prev" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--<form wicket:id="rateForm">-->
+                <!--<div class="span6">-->
+                    <!--<input type="text" wicket:id="rate" class="rating" min=1 max=5 step=1 data-size="sm" data-show-caption="false" />-->
+                <!--</div>-->
+                <!--<input type="text" wicket:id="comment" />-->
+                <!--<a wicket:id="submitRate" class="btn green pull-right">Submit</a>-->
+            <!--</form>-->
+
+        
+    </div>
+    <!--</ul>-->
+</wicket:panel>
+</body>
+</html>

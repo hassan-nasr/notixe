@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>AjaxPageNavigator</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div>
+                <img wicket:id="image" class="part1" style="border-radius: 0px!important;"/>
+                <div style="text-align: center; border-radius: 0px !important;" class="transparentWhite">
+                    <h2 wicket:id="title" style="margin: 0px;color: rgb(34, 95, 90);" class="part2 verticalCenter"></h2>
+                    <div class="part3  "  style="font-weight: 300;font-size: large">
+                        <p wicket:id="text" />
+                        <div style="display: inline-block;" class="btn-group">
+                            <span wicket:id="actions">
+                                <a class="btn " wicket:id="action">
+                                    <span wicket:id="generalActionTitle"/>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <wicket:panel>
+        <form wicket:id="form" style="margin-bottom: 10px" class="btn-group">
+            <input type="text" wicket:id="query" class="m-warp noradR" style="margin-bottom: 0px"/>
+            <!--<input type="submit" wicket:id="submit" wicket:message="value:Search" >-->
+            <button type="submit" class="btn green noradL" wicket:id="submit" style="padding-top: 5px; padding-bottom: 5px">
+                <i class="icon-search m-icon-white"></i> <wicket:message key="Search"/>
+            </button>
+        </form>
+        <div wicket:id="wmc">
+            <div wicket:id="searchResult" />
+        </div>
+    </wicket:panel>
+</body>
+</html>

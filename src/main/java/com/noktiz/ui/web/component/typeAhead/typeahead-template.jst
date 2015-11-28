@@ -1,0 +1,49 @@
+/*
+${inputFieldId}
+${callbackUrl}
+${numOfItmes}
+${requestType}
+*/
+(function($){
+        console.log("on attaching typeahead plugin to #${inputFieldId}");
+    
+    var parentPosition = $("#${inputFieldId}").parent().css("position");
+    if(parentPosition !== "relative" && parentPosition !== "absolute"){
+        $("#${inputFieldId}").parent().css("position","relative");
+    }
+$('#${inputFieldId}').typeahead({"source": function(query, process) {
+        console.log("in typeahead type event!");
+        if(window.Mj === undefined){
+        window.Mj = {};
+        }
+        if (window.Mj.${inputFieldId} === undefined) {
+            window.Mj.${inputFieldId}  = {};
+            }
+        if (window.Mj.${inputFieldId}.lastSavedQuery === undefined) {
+            window.Mj.${inputFieldId}.lastSavedQuery = '';
+            console.log("window.Mj.${inputFieldId}.lastSavedQuery intitialized!");
+        } else{
+            console.log("window.Mj.${inputFieldId}.lastSavedQuery NOT intitialized! it must be initialized before.");
+        }
+        
+        if (window.Mj.${inputFieldId}.lastSavedQuery.length >= ${inputLengthForCache} 
+                && window.Mj.${inputFieldId}.itemsOfLastAjax != undefined
+                && window.Mj.${inputFieldId}.itemsOfLastAjax.length >= 1 
+                && query.length >= window.Mj.${inputFieldId}.lastSavedQuery.length 
+                && query.slice(0, window.Mj.${inputFieldId}.lastSavedQuery.length) == window.Mj.${inputFieldId}.lastSavedQuery) {
+            process(window.Mj.${inputFieldId}.itemsOfLastAjax, 200);
+        } else {
+            window.Mj.${inputFieldId}.lastSavedQuery = query;
+            console.log('ajax call with query:' + query);
+            $.ajax({"data": {"q": query}, "type": "${requestType}", "success": function(data, statusCode) {
+                    console.log("before setting window.Mj.${inputFieldId}.itemsOfLastAjax = "+data);
+                    window.Mj.${inputFieldId}.itemsOfLastAjax = data;
+                    process(data, statusCode);
+                }, "url": "${callbackUrl}"});
+        }
+    }, "items": ${numOfItmes}, "highlighter": function(item) {
+        return item;
+    },
+    delay: 900
+    });
+})(jQuery);

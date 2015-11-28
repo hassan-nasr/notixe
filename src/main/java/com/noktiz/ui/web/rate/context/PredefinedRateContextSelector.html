@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>RateContextViewEdit</title>
+</head>
+<body>
+<wicket:panel>
+    <form wicket:id="form">
+        <div style="z-index: 1000" class=" row-fluid ">
+
+            <div class="span5 pull-left" style="float:left">
+                <select wicket:id="language"></select>
+            </div>
+            <div class="span5 pull-left" style="float:left">
+                <input wicket:id="query" class=" m-wrap medium" type="text" wicket:message="placeholder:searchPlaceHolder" />
+            </div>
+            <div class="span2 pull-left" style="float:left">
+                <input type="submit" class="btn span12 " wicket:id="submit" wicket:message="value:search"/>
+            </div>
+        </div>
+    </form>
+
+    <div wicket:id="questionContainer">
+        <div wicket:id="questionList"/>
+    </div>
+</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,189 @@
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+
+@fontSize: 15px;
+@font-face {
+    font-family: 'B Mitra';
+    src: url('fonts/bmitra.eot');
+    src: url('fonts/bmitra.eot') format('embedded-opentype'),
+         url('fonts/bmitra.woff') format('woff'),
+         url('fonts/bmitra.ttf') format('truetype'),
+         url('fonts/bmitra.svg#B Mitra') format('svg');
+}
+
+
+@font-face {
+    font-family: 'B Vahid';
+    src: url('fonts/bvahid.eot');
+    src: url('fonts/bvahid.eot') format('embedded-opentype'),
+         url('fonts/bvahid.woff') format('woff'),
+         url('fonts/bvahid.ttf') format('truetype'),
+         url('fonts/bvahid.svg#B Vahid') format('svg');
+}
+
+
+@font-face {
+    font-family: 'B Mitra Bold';
+    src: url('fonts/BMitraBold.eot');
+    src: url('fonts/BMitraBold.eot?#') format('eot'),  
+         url('fonts/BMitraBold.woff') format('woff'),  
+         url('fonts/BMitraBold.ttf') format('truetype');  
+}
+
+@font-face {
+    font-family: 'A Shekari';
+    src: url('fonts/shekari.eot');
+    src: url('fonts/shekari.eot') format('embedded-opentype'),
+         url('fonts/shekari.woff') format('woff'),
+         url('fonts/shekari.ttf') format('truetype'),
+         url('fonts/shekari.svg#A Shekari') format('svg');
+	
+}
+
+
+@navbarInverseButtonColor:  @navbarInverseLinkColor;
+
+.navbar-inverse {
+    .btn-inverse {
+        color: @navbarInverseButtonColor;
+    }
+}
+
+// select,
+// textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+//.uneditable-input
+ {
+  height: auto;
+  min-height: 20px;
+}
+
+body {
+    // font: 12px "Droid Arabic Naskh","B Nazanin","Helvetica Neue", Helvetica, Arial, sans-serif;
+    //font: 14px/1.5em Tahoma;
+    font-family: "B Mitra", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: @fontSize;
+}
+input, button, select, textarea {
+    font-family: "B Mitra", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+label, input, button, select, textarea {
+    font-size: @fontSize;
+}
+
+.navbar .brand {
+    padding: 7px 20px 3px; 
+    font-size: 18px;
+}
+
+.nav-tabs > li > a, .nav-pills > li > a {
+    line-height: 18px;
+}
+
+table th {
+    font-family: "B Mitra Bold", "B Mitra", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    padding: 3px 6px;
+}
+
+.add-on {
+    padding: 3px 5px;
+}
+
+.input-append .add-on,
+.input-prepend .add-on {
+    padding: 3px 5px;
+    height: 20px;
+    line-height: 20px;
+}
+
+input, textarea, .uneditable-input {
+    width: 150px;
+}
+
+
+.input-mini {
+    width: 50px;
+}
+
+.input-small {
+    width: 90px;
+}
+
+.input-medium {
+    width: 150px;
+}
+
+.input-large {
+    width: 200px;
+}
+
+.input-xlarge {
+    width: 250px;
+}
+
+.input-xxlarge {
+    width: 530px;
+}
+
+select {
+    width: 185px;
+    /*background-color: #FFF;
+    border: 1px solid #CCC;*/
+}
+
+.form-horizontal {
+    input + .help-block,
+    select + .help-block,
+    textarea + .help-block,
+    .uneditable-input + .help-block,
+    .input-prepend + .help-block,
+    .input-append + .help-block {
+         margin-top: 2px;
+    }
+}
+
+legend + .control-group {
+    margin-top: 0px;
+    -webkit-margin-top-collapse: separate;
+    -o-margin-top-collapse: separate;
+    -moz-margin-top-collapse: separate;
+}
+
+legend {
+    line-height: 30px;
+}

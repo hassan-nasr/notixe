@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>RateContextViewEdit</title>
+</head>
+<body>
+<wicket:panel>
+    <!--<wicket:message key="AskYourFriends" />-->
+    <a wicket:id="newRating" class="btn blue block " data-toggle="modal" href="" style="margin-bottom: 7px;"><i class="icon-plus"></i> <wicket:message key="NewQuestion"/></a>
+    <div wicket:id="modal" class="modal hide fade" tabindex="-1" data-focus-on="input:first">
+        <div class="modal-header">
+            <button type="button" class="close"  wicket:id="close"></button>
+            <button type="button" class="close closeAction" data-dismiss="modal" aria-hidden="true" style="display: none"></button>
+            <h3>
+                <wicket:message key="NewQuestion"/></h3>
+        </div>
+        <div class="modal-body" style="overflow: visible">
+            <div wicket:id="newContext"></div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+    <div wicket:id="listHolder" style="">
+        <div wicket:id="rateContexts">
+             <!--<div wicket:id="item"></div>-->
+         </div>
+    </div>
+</wicket:panel>
+</body>
+</html>

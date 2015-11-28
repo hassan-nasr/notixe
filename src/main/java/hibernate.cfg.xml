@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Noktiz3?autoReconnect=true</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.123">UTF-8</property>
+    <property name="hibernate.connection.useUnicode">true</property>
+    <property name="hibernate.connection.characterEncoding">UTF-8</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.connection.pool_size">4</property>
+    <!--<property name="show_sql">true</property>-->
+    <!--<property name="format_sql">true</property>-->
+    <property name="use_sql_comments">false</property>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+    <property name="hibernate.c3p0.min_size">5</property>
+    <property name="hibernate.c3p0.max_size">10</property>
+    <property name="hibernate.c3p0.acquire_increment">1</property>
+    <property name="hibernate.c3p0.idle_test_period">3000</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.c3p0.timeout">1800</property>
+
+
+<!--
+    <property name="hibernate.connection.provider_class" >com.noktiz.domain.persistance.HikariConnectionProvider</property>
+    <property name="hibernate.hikari.minimumPoolSize">20</property>
+    <property name="hibernate.hikari.maximumPoolSize">10</property>
+    <property name="hibernate.hikari.idleTimeout">30000</property>
+    <property name="hibernate.hikari.dataSourceClassName">com.mysql.jdbc.jdbc2.optional.MysqlDataSource</property>
+    <property name="hibernate.hikari.dataSource.url">jdbc:mysql://localhost:3306/Noktiz</property>
+    <property name="hibernate.hikari.dataSource.user">root</property>
+    <property name="hibernate.hikari.dataSource.password">root</property>
+    <property name="hibernate.hikari.dataSource.prepStmtCacheSize">400</property>
+    <property name="hibernate.hikari.dataSource.prepStmtCacheSqlLimit">2048</property>
+    <property name="hibernate.hikari.dataSource.cachePrepStmts">true</property>
+    <property name="hibernate.hikari.dataSource.useServerPrepStmts">true</property>
+-->
+
+
+
+    <mapping class="com.noktiz.domain.entity.BaseObject"/>
+    <mapping class="com.noktiz.domain.entity.notifications.BaseNotification"/>
+    <mapping class="com.noktiz.domain.entity.notifications.NotificationAddFriend"/>
+    <mapping class="com.noktiz.domain.entity.notifications.NotificationThanks"/>
+    <mapping class="com.noktiz.domain.entity.notifications.NotificationNewMessage"/>
+    <mapping class="com.noktiz.domain.entity.notifications.NotificationRate"/>
+    <mapping class="com.noktiz.domain.entity.notifications.NotificationEndorse"/>
+    <mapping class="com.noktiz.domain.entity.Block"/>
+    <mapping class="com.noktiz.domain.entity.Friendship"/>
+    <mapping class="com.noktiz.domain.entity.Message"/>
+    <mapping class="com.noktiz.domain.entity.Thread"/>
+    <mapping class="com.noktiz.domain.entity.User"/>
+    <mapping class="com.noktiz.domain.entity.user.Role"/>
+    <mapping class="com.noktiz.domain.entity.UserProperties"/>
+    <mapping class="com.noktiz.domain.entity.Scores"/>
+    <mapping class="com.noktiz.domain.entity.Credential"/>
+    <mapping class="com.noktiz.domain.entity.social.SocialConnection"/>
+    <mapping class="com.noktiz.domain.entity.PersonalInfo"/>
+    <mapping class="com.noktiz.domain.entity.NotificationSettings"/>
+    <mapping class="com.noktiz.domain.system.SystemConfig"/>
+    <mapping class="com.noktiz.domain.entity.cred.FacebookInfo"/>
+    <mapping class="com.noktiz.domain.entity.cred.GoogleInfo"/>
+    <mapping class="com.noktiz.domain.entity.social.FacebookSocialConnection"/>
+    <mapping class="com.noktiz.domain.entity.social.GoogleSocialConnection"/>
+    <mapping class="com.noktiz.domain.entity.token.SingleAccessToken"/>
+    <mapping class="com.noktiz.domain.entity.token.RateContextAccessToken"/>
+    <mapping class="com.noktiz.domain.entity.rate.Rate"/>
+    <mapping class="com.noktiz.domain.entity.rate.RateContext"/>
+    <mapping class="com.noktiz.domain.entity.rate.RateOverviewPrivacy"/>
+    <mapping class="com.noktiz.domain.entity.rate.NotificationRateInvite"/>
+    <mapping class="com.noktiz.domain.entity.endorse.Endorse"/>
+    <mapping class="com.noktiz.domain.entity.privacy.ComplexPersonList"/>
+    <!--<mapping class="com.noktiz.domain.entity.privacy.RateContextAccess" />-->
+    <mapping class="com.noktiz.domain.entity.subscribe.Subscription"/>
+    <mapping class="com.noktiz.domain.entity.subscribe.RateSubscription"/>
+    <mapping class="com.noktiz.domain.entity.rate.PredefinedQuestion"/>
+    <mapping class="com.noktiz.domain.i18n.Local"/>
+    <mapping class="com.noktiz.domain.entity.rate.QuestionLanguage" />
+    <!--<mapping class="com.noktiz.domain.entity.endorse.Endorsement"/>-->
+    <!--<mapping class="com.noktiz.domain.entity.endorse.EndorseOverview"/>-->
+    <!--<mapping class="com.noktiz.domain.entity.endorse.MyEndorsements"/>-->
+
+  </session-factory>
+  
+</hibernate-configuration>

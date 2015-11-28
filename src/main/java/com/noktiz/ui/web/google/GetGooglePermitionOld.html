@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>NotificationPanelAddFriend</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <wicket:panel>
+            <div id="gConnect" wicket:id="gConnect">
+                <button class="g-signin"
+                        wicket:id="gConnectButton"
+                        data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                        data-clientId="368179572834-2cb2ss663jep3n0g3faf40ohq2ci82jp.apps.googleusercontent.com"
+                        data-accesstype="offline"
+                        data-callback="onSignInCallback"
+                        data-theme="dark"
+                        data-cookiepolicy="none">
+                </button>
+            </div>
+            <form id="bridgeForm" wicket:id="bridgeForm" hidden="true">
+                <span id="stateLabel" hidden="true" wicket:id="stateLabel"></span>
+                <input id="bridgeText0" hidden="true" wicket:id="bridgeText0" type="text"></input>
+                <input id="bridgeText1" hidden="true" wicket:id="bridgeText1" type="text"></input>
+                <input id="bridgeSubmit" wicket:id="bridgeSubmit" type="submit"></input>
+            </form>
+        </wicket:panel>
+    </body>
+</html>

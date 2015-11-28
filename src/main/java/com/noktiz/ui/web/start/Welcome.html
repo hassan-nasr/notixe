@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:wicket="http://java.sun.com/jsf/html">
+<!--<head>
+    <title>Helios by HTML5 UP</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    &lt;!&ndash;
+&lt;!&ndash;[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]&ndash;&gt;
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.onvisible.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>&ndash;&gt;
+&lt;!&ndash;<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+            &lt;!&ndash;[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]&ndash;&gt;
+		</noscript>&ndash;&gt;
+	</head>-->
+<wicket:head>
+    <title>
+        Notixe
+    </title>
+</wicket:head>
+<body>
+
+<!--<wicket:child/>-->
+<!--<iframe>-->
+<!--<wicket:>-->
+<!--<div wicket:id="header"></div>-->
+<!--</iframe>-->
+<div class="homepage">
+
+<!-- Header -->
+<div id="header">
+
+    <!-- Inner -->
+    <div class="inner">
+        <header>
+            <img wicket:id="logo" width="400px" style="max-width: 100%"/>
+            <!--<h1><a href="index.html" id="logo">Notixe</a></h1>-->
+            <hr/>
+            <h2 style="color: #ffffff">
+                <wicket:message key="slogan"/>
+            </h2>
+        </header>
+        <footer>
+
+        </footer>
+    </div>
+
+    <!-- Nav -->
+    <!--<form wicket:id="loginForm">-->
+
+    <!--<nav id="nav">-->
+    <!--<ul>-->
+    <!--<li><a href="index.html">Home</a></li>-->
+    <!--<li>-->
+
+    <!--<a href="">Dropdown</a>-->
+
+
+    <!--<ul>-->
+    <!--&lt;!&ndash;<li><a href="#">Lorem ipsum dolor</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#">Magna phasellus</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#">Etiam dolore nisl</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#">Veroeros feugiat</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><input type="email" wicket:id="LIemail" />        </li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><input type="password" wicket:id="LIpassword" />  </li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><button type="submit" >sign in</button>                          </li>&ndash;&gt;-->
+
+
+    <!--</ul>-->
+
+    <!--</li>-->
+    <!--&lt;!&ndash;<li><a href="left-sidebar.html">Left Sidebar</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="right-sidebar.html">Right Sidebar</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="no-sidebar.html">No Sidebar</a></li>&ndash;&gt;-->
+    <!--</ul>-->
+    <!--</nav>-->
+    <!--</form>-->
+
+</div>
+
+<form wicket:id="loginForm">
+    <section id="wrapper style1" style="line-height: 1.5em">
+        <header>
+
+            <div style="/*padding: 10px;text-align: center;position: fixed;z-index: 100000;*//* left: 100px; *//*right: 0px;top: 0px;*//* height: 100px; *//*width: 700px;*/background-color: rgba(0,0,0,0); text-align: center;">
+                <input type="email" wicket:id="LIemail" placeholder="email"
+                       style="width: 200px; display: inline; padding: 10px">
+                <input type="password" wicket:id="LIpassword" placeholder="password"
+                       style="width: 200px; display: inline; padding: 10px">
+                <input type="submit" style="width: 50px; display: inline; padding: 4px" value="login"> or
+                <a type="button" wicket:id="registerLink" value="Register" href="/login"
+                   style=" display: inline; padding: 4px; color:#e25046 !important">
+                    <wicket:message key="Register"/></a>
+                <span style="color: #8b6e23">alpha version (V0.2.0)</span>
+            </div>
+        </header>
+    </section>
+
+</form>
+<!-- Banner -->
+<!--
+			<section id="banner">
+				<header>
+					<h2>Hi. You're looking at <strong>Helios</strong>.</h2>
+					<p>
+						A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
+						Built on <strong>skel</strong> and released under the <a href="http://html5up.net/license">CCA</a> license.
+					</p>
+				</header>
+			</section>
+-->
+
+<!-- Features -->
+<div class="wrapper style1">
+
+    <section id="features" class="container special">
+        <!--<header>-->
+        <!--<h2><wicket:message key="HowItWorks"/></h2>-->
+
+        <!--</header>-->
+        <div class="row">
+            <article class="2u special" style="padding-top: 1px;"></article>
+            <article class="4u special">
+                <!--<a href="#" class="image featured"><img src="http://business24.agenturbelmediag.netdna-cdn.com/wp-content/uploads/2014/06/Feedback-Dooder-Shutterstock.com_.jpg"  alt="" /></a>-->
+                <header>
+                    <h3>
+                        <wicket:message key="feature1title"></wicket:message>
+                    </h3>
+                </header>
+                <p>
+                    <wicket:message key="feature1body"/>
+                </p>
+            </article>
+            <article class="4u special">
+                <!--<a href="#" class="image featured"><img src="http://business24.agenturbelmediag.netdna-cdn.com/wp-content/uploads/2014/06/Feedback-Dooder-Shutterstock.com_.jpg"  alt="" /></a>-->
+                <header>
+                    <h3>
+                        <wicket:message key="feature2title"/>
+                    </h3>
+                </header>
+                <p>
+                    <wicket:message key="feature2body"/>
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+</div>
+<!-- Carousel -->
+<!--<section class="carousel">
+    <div class="reel">
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Pulvinar sagittis congue</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Fermentum sagittis proin</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Sed quis rhoncus placerat</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Ultrices urna sit lobortis</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Varius magnis sollicitudin</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Pulvinar sagittis congue</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Fermentum sagittis proin</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Sed quis rhoncus placerat</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Ultrices urna sit lobortis</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+        <article>
+            <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+            <header>
+                <h3><a href="#">Varius magnis sollicitudin</a></h3>
+            </header>
+            <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+        </article>
+
+    </div>
+</section>-->
+
+<!-- Main -->
+<div class="wrapper style2">
+
+    <article id="main" class="container special">
+
+        <header>
+            <h2 style="font-weight: 300; font-size:47px;">
+                <wicket:message key="shortIntro"/>
+            </h2>
+            <!--<p>-->
+            <!--Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim -->
+            <!--pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.-->
+            <!--</p>-->
+        </header>
+        <p>
+            <wicket:message key="longIntro"/>
+        </p>
+        <!--<footer>-->
+        <!--<a href="#" class="button">Continue Reading</a>-->
+        <!--</footer>-->
+    </article>
+
+</div>
+
+<div class="wrapper style1">
+
+    <section id="howItWorks" class="container special">
+        <header>
+            <h2>
+                <wicket:message key="HowItWorks"/>
+            </h2>
+
+        </header>
+        <div class="row">
+            <article class="4u special">
+                <wicket:link>
+                    <a class="image featured"><img src="../images/friends.jpg" alt=""/></a>
+                </wicket:link>
+
+                <header>
+                    <h3>
+                        <wicket:message key="how1title"></wicket:message>
+                    </h3>
+                </header>
+                <p>
+                    <wicket:message key="how1body"/>
+                </p>
+            </article>
+            <article class="4u special">
+                <wicket:link>
+                    <a class="image featured"><img src="../images/note.jpg" alt=""/></a>
+                </wicket:link>
+                <header>
+                    <h3>
+                        <wicket:message key="how2title"></wicket:message>
+                    </h3>
+                </header>
+                <p>
+                    <wicket:message key="how2body"/>
+                </p>
+            </article>
+            <article class="4u special">
+                <wicket:link>
+                    <a class="image featured"><img src="../images/question.jpg" alt=""/></a>
+                </wicket:link>
+                <header>
+                    <h3>
+                        <wicket:message key="how3title"/>
+                    </h3>
+                </header>
+                <p>
+                    <wicket:message key="how3body"/>
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<!--<div id="footer">
+    <div class="container">
+        &lt;!&ndash;<div class="row">
+
+            &lt;!&ndash; Tweets &ndash;&gt;
+							<section class="4u">
+								<header>
+									<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+								</header>
+								<ul class="divided">
+									<li>
+										<article class="tweet">
+											Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+											<span class="timestamp">5 minutes ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="tweet">
+											Hendrerit rutrum quisque.
+											<span class="timestamp">30 minutes ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="tweet">
+											Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+											<span class="timestamp">3 hours ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="tweet">
+											Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+											<span class="timestamp">5 hours ago</span>
+										</article>
+									</li>
+								</ul>
+							</section>
+
+						&lt;!&ndash; Posts &ndash;&gt;
+							<section class="4u">
+								<header>
+									<h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+								</header>
+								<ul class="divided">
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Nisl fermentum integer</a></h3>
+											</header>
+											<span class="timestamp">3 hours ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Phasellus portitor lorem</a></h3>
+											</header>
+											<span class="timestamp">6 hours ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Magna tempus consequat</a></h3>
+											</header>
+											<span class="timestamp">Yesterday</span>
+										</article>
+									</li>
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Feugiat lorem ipsum</a></h3>
+											</header>
+											<span class="timestamp">2 days ago</span>
+										</article>
+									</li>
+								</ul>
+							</section>
+
+						&lt;!&ndash; Photos &ndash;&gt;
+							<section class="4u">
+								<header>
+									<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+								</header>
+								<div class="row 25% no-collapse">
+									<div class="6u">
+										<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+									</div>
+									<div class="6u">
+										<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+									</div>
+								</div>
+								<div class="row 25% no-collapse">
+									<div class="6u">
+										<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+									</div>
+									<div class="6u">
+										<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+									</div>
+								</div>
+								<div class="row 25% no-collapse">
+									<div class="6u">
+										<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+									</div>
+									<div class="6u">
+										<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+									</div>
+								</div>
+							</section>
+
+					</div>&ndash;&gt;
+        &lt;!&ndash;<hr />&ndash;&gt;
+        &lt;!&ndash;<div class="row">
+            <div class="12u">
+
+                &lt;!&ndash; Contact &ndash;&gt;
+                &lt;!&ndash;<section class="contact">
+                    <header>
+                        <h3>Nisl turpis nascetur interdum?</h3>
+                    </header>
+                    <p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+                    </ul>
+                </section>&ndash;&gt;
+
+                &lt;!&ndash; Copyright &ndash;&gt;
+                <div class="copyright">
+                    <ul class="menu">
+                        <li>&copy; Notixe Inc. All rights reserved.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>&ndash;&gt;
+    </div>
+</div>-->
+
+</div>
+</body>
+<!--<footer wicket:id="footerpanel"/>-->
+<!--</wicket:extend>-->
+</html>

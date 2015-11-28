@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>SignIn</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="form">
+                <div wicket:id="feedback"/>
+                <input type="text" wicket:id="username"/>
+                <input type="password" wicket:id="password"/>
+                <input type="text" style="display: none;" wicket:id="timezone"/>
+                <input type="submit" class="btn" value="sign in"/>
+            </form>
+            <div wicket:id="signup"/>
+        </wicket:panel>
+    </body>
+</html>

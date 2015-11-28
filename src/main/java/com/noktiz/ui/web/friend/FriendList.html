@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>FriendList</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="form" class="pull-right" style="margin: 0px;">
+                <div wicket:id="feedback"/>
+                <div class="btn-group">
+                    <input class="m-wrap noradR" type="email" wicket:id="email" wicket:message="placeholder:enterEmailToAddFriend"/>
+                    <a class="btn green" wicket:id="submit" >
+                        <wicket:message key="AddFriend"/></a>
+                </div>
+            </form>
+            <div wicket:id="friendList"/>
+            <!--<div wicket:id="fbfriends" />-->
+        </wicket:panel>
+    </body>
+</html>

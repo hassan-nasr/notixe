@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>ThreadList</title>
+</head>
+<body>
+<wicket:panel>
+    <div class="row-fluid">
+                <span class="pull-left">
+                    <a wicket:id="refresh" class="btn"><i class="icon-refresh"/>
+                        <wicket:message key="refresh"/></a>
+                    <!--<a class="btn yellow">mark all as read</a>-->
+                </span>
+
+        <div wicket:id="nav" style="margin: 0px;" class="dataTables_paginate paging_bootstrap pagination pull-right"/>
+    </div>
+    <table wicket:id="wmc" border="0" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Participant</th>
+            <th>Title</th>
+            <th><span class="pull-right">Date</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr wicket:id="threads">
+            <td class="span3">
+                <span wicket:id="participant"/>
+                    <span wicket:id="blocked" class="label label-important tooltips "
+                          data-placement="bottom" wicket:message="data-original-title:conversationBlocked"><wicket:message
+                            key="blocked"/></span>
+                    <span wicket:id="iBlocked" class="label label-info tooltips"
+                          data-placement="bottom" wicket:message="data-original-title:iBlocked"><wicket:message
+                            key="blocked"/></span>
+                    <span wicket:id="blockedBy" class="label label-warning tooltips"
+                          data-placement="bottom" wicket:message="data-original-title:blockedBy"><wicket:message
+                            key="blocked"/></span>
+                    <span wicket:id="blockedByCompl" class="label label-inverse tooltips"
+                          data-placement="bottom" wicket:message="data-original-title:blockedByCompl"><wicket:message
+                            key="blocked"/></span>
+            </td>
+
+            <td class="span7" style="overflow-wrap: break-word; overflow: hidden;max-width: 60%">
+                <a style="text-decoration: none" wicket:id="showThread">
+                    <strong> <span wicket:id="title"/></strong> <span wicket:id="text"/>
+                </a>
+            </td>
+            <td class="span2 ">
+                <span class="pull-right" wicket:id="date"/>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</wicket:panel>
+</body>
+</html>

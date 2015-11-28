@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>RegisterPanel</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="form" style="display: none" method="post" >
+                <input type="hidden" value="timeZone" wicket:id="timeZone" class="timeZoneInput"/>
+                <input type="submit" wicket:id="submit" class="timeZoneSubmit"/>
+                <script type="application/javascript" >
+                    $(document).ready(function() {
+                        $('.timeZoneInput').val(-new Date().getTimezoneOffset());
+                        setTimeout(function(){$('.timeZoneSubmit').click();},100);
+//                        $('.timeZoneSubmit').click();
+                    })
+                </script>
+            </form>
+        </wicket:panel>
+    </body>
+</html>

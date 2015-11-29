@@ -16,7 +16,6 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.image.Image;
 import org.apache.wicket.markup.html.link.ExternalLink;
-import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
 
@@ -64,7 +63,7 @@ public class AboutBasicInfoPanel extends BasePanel {
     }
 
     public String getMutualTrustedFriedsCountString(UserFacade userFacade) {
-        return new StringResourceModel("mutualTrustCountMessage", null, new Object[]{Friendship.getMutualTrustedFriedsCount(userFacade.getUser(), getUserInSite().getUser())}).getObject();
+        return new StringResourceModel("mutualTrustCountMessage", null, new Object[]{Friendship.getMutualTrustedFriendsCount(userFacade.getUser(), getUserInSite().getUser())}).getObject();
     }
 
     private void showAddFriend(final UserFacade userFacade) {

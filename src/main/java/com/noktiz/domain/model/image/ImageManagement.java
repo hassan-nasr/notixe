@@ -8,16 +8,17 @@ import com.noktiz.domain.entity.User;
 import com.noktiz.domain.model.UserFacade;
 import com.noktiz.ui.web.Application;
 import com.noktiz.ui.web.resourece.FolderContentResource;
+import org.apache.log4j.Logger;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.request.resource.ResourceReference;
+import org.apache.wicket.request.resource.SharedResourceReference;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
-import javax.imageio.ImageIO;
-import org.apache.log4j.Logger;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.request.resource.ResourceReference;
-import org.apache.wicket.request.resource.SharedResourceReference;
 
 /**
  *
@@ -111,6 +112,12 @@ public class ImageManagement {
     private static String getUserImageId(String id, ImageSize imageSize) {
         return id+"_"+imageSize.toString();
     }
+
+//        ./userImage?file=aGcxEbqAZqIYfqP_large
+    public static String getUserImageUrl(User uf,ImageSize imageSize){
+        return "./"+getImageBaseAddress()+"?file="+getUserImageId(uf.getPictureId(),imageSize);
+    }
+
     public enum ImageSize{
         small,medium,large
     }

@@ -7,16 +7,15 @@ package com.noktiz.domain.entity;
 
 import com.noktiz.domain.model.BaseManager;
 import com.noktiz.domain.persistance.HSF;
-import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
-import javax.persistence.*;
-
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.annotations.Index;
+
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -233,7 +232,7 @@ public class Friendship extends BaseObject {
         return query.list();
     }
 
-    public static Long getMutualTrustedFriedsCount(User u1, User u2){
+    public static Long getMutualTrustedFriendsCount(User u1, User u2){
         Session cs = HSF.get().getCurrentSession();
         Query query = cs.getNamedQuery("Friendship_mutualTrust");
         query.setParameter("user1", u1);

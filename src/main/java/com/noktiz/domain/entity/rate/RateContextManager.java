@@ -1,11 +1,10 @@
 package com.noktiz.domain.entity.rate;
 
-import com.noktiz.domain.entity.social.SocialConnection;
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.entity.social.GoogleSocialConnection;
+import com.noktiz.domain.entity.social.SocialConnection;
 import com.noktiz.domain.entity.social.SocialConnectionManager;
 import com.noktiz.domain.model.*;
-import com.noktiz.domain.model.email.EmailCreator;
 import com.noktiz.domain.persistance.HSF;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
@@ -180,7 +179,7 @@ public class RateContextManager extends BaseManager {
         }
     }
 
-    private NotificationRateInvite getInviteNotification(RateContext rateContext, User friend) {
+    public NotificationRateInvite getInviteNotification(RateContext rateContext, User friend) {
         Query query = HSF.get().getCurrentSession().getNamedQuery("RateInviteByUserAndRateContext");
         query.setParameter("rateContext",rateContext);
         query.setParameter("invitee",friend);
@@ -193,6 +192,16 @@ public class RateContextManager extends BaseManager {
         Query query = HSF.get().getCurrentSession().getNamedQuery("LoadRateContextsByUserBefore");
         query.setParameter("user",user.getUser());
         query.setParameter("creationDate",before);
+        query.setMaxResults(count);
+        return query.list();
+    }
+
+    public List<RateContext> loadRateContextsByUser(UserFacade user, int from, int count){
+        if(user.getUser().getId()== null)
+            return new ArrayList<>();
+        Query query = HSF.get().getCurrentSession().getNamedQuery("LoadRateContextsByUser");
+        query.setParameter("user",user.getUser());
+        query.setFirstResult(from);
         query.setMaxResults(count);
         return query.list();
     }

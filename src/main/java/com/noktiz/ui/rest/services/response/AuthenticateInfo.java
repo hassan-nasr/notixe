@@ -1,5 +1,7 @@
 package com.noktiz.ui.rest.services.response;
 
+import com.noktiz.domain.entity.User;
+
 /**
  * Created by hassan on 02/11/2015.
  */
@@ -8,7 +10,9 @@ public class AuthenticateInfo {
     private Long expireDate;
     private String email;
     private String userId;
-
+    private String firstName;
+    private User.Gender gender;
+    private String lastName;
 
 
     public String getAccessToken() {
@@ -41,5 +45,29 @@ public class AuthenticateInfo {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setGender(User.Gender gender) {
+        this.gender = gender;
+    }
+
+    public User.Gender getGender() {
+        return gender;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }

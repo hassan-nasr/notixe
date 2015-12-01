@@ -81,30 +81,30 @@ public class RateManager extends BaseManager {
         return rates;
     }
 
-    public Result save(Rate rate) {
+    public ResultWithObject save(Rate rate) {
         if (RateContext.RateState.Required.equals(rate.getContext().getRequireRate()) && rate.getRate() == null) {
-            return new Result(new Result.Message("message.rating_required", Result.Message.Level.error), false);
+            return new ResultWithObject(null,new Result.Message("message.rating_required", Result.Message.Level.error), false);
         }
         if (rate.getRate() != null && (rate.getRate() < 1 || rate.getRate() > 5)) {
-            return new Result(new Result.Message("message.rating_required", Result.Message.Level.error), false);
+            return new ResultWithObject(null,new Result.Message("message.rating_required", Result.Message.Level.error), false);
         }
         if (RateContext.RateState.Unavailable.equals(rate.getContext().getRequireRate())) {
             rate.setRate(null);
         }
 
-        Result result = new Result(true);
+        ResultWithObject result = new ResultWithObject(true);
         try {
-            super.update(rate);
+            result = super.update(rate);
             Result.Message m = new Result.Message("message.respond_saved", Result.Message.Level.success);
             result.addRequired(new Result(m, true));
             return result;
         } catch (Exception e) {
             Logger.getLogger(RateManager.class).error(e);
-            return new Result(new Result.Message(e.getMessage(), Result.Message.Level.error), false);
+            return new ResultWithObject(null,new Result.Message(e.getMessage(), Result.Message.Level.error), false);
         }
     }
 
-    public Result rateFriend(Rate rate, NotificationRateInvite notificationRateInvite) {
+    public ResultWithObject<Rate> rateFriend(Rate rate, NotificationRateInvite notificationRateInvite) {
 //
 //        if (!new UserFacade(rate.getSender()).doIOwnerTheFriendshipOf(new UserFacade(rate.getReceiver()))) {
 //            return new Result(new Result.Message("You are not a friend of " + rate.getReceiver().getName() + ".", Result.Message.Level.error), false);
@@ -112,22 +112,22 @@ public class RateManager extends BaseManager {
         Block blocked = Block.loadBlocked(rate.getSender(), rate.getReceiver());
 
         if (blocked != null) {
-            Result result = new Result(new Result.Message("message.can_not_rate_because_block", Result.Message.Level.error,rate.getReceiver().getName() ), false);
+            ResultWithObject result = new ResultWithObject(null,new Result.Message("message.can_not_rate_because_block", Result.Message.Level.error,rate.getReceiver().getName() ), false);
             return result;
         }
         rate.setContext(new RateContextManager().load(rate.getContext().getId()));
         List<Rate> lastRate = loadLastRatesDoneByUserInContext(new UserFacade(rate.getSender()), rate.getContext(), 0, 1);
         if(lastRate.size()>0 && !rate.getContext().canRateHavingPreviousRating(lastRate.get(0))){
-            Result result = new Result(new Result.Message("message.can_not_respond_anymore" , Result.Message.Level.error), false);
+            ResultWithObject result = new ResultWithObject(null,new Result.Message("message.can_not_respond_anymore" , Result.Message.Level.error), false);
             return result;
         }
         if (!rate.getContext().getEnable()) {
-            Result result = new Result(new Result.Message("message.respond_disabled" , Result.Message.Level.error), false);
+            ResultWithObject result = new ResultWithObject(null,new Result.Message("message.respond_disabled" , Result.Message.Level.error), false);
             return result;
         }
         HSF.get().beginTransaction();
         try {
-            Result result = save(rate);
+            ResultWithObject result = (save(rate));
             if(result.result == false){
                 return result;
             }
@@ -141,7 +141,7 @@ public class RateManager extends BaseManager {
             } else {
                 rate.getNotification().setSeen(false);
             }
-            update(rate);
+            result = update(rate);
             HSF.get().commitTransaction();
 //            if (rate.getNotification() == null) {
 //                NotificationRate notif = new NotificationRate(rate);
@@ -155,7 +155,7 @@ public class RateManager extends BaseManager {
             HSF.get().roleback();
             Logger.getLogger(this.getClass()).info("HibernateException", ex);
             rate.setId(null);
-            return new Result("couldn't rate please try again later",false);
+            return new ResultWithObject(null,new Result.Message("couldn't rate please try again later", Result.Message.Level.error),false);
         }
 //        HSF.get().getCurrentSession().getTransaction().commit();
 
@@ -194,7 +194,7 @@ public class RateManager extends BaseManager {
         thread.getThread().setTargetVisible(rate.isShowSender());
         thread.getThread().setStarterVisible(true);
         thread.save();
-        return thread;
+        return new ThreadFacade(thread.getThread(),new UserFacade(rate.getReceiver()));
 
     }
 
@@ -295,6 +295,10 @@ public class RateManager extends BaseManager {
         namedQuery.setMaxResults(count);
         List<Rate> ret = namedQuery.list();
         return ret;
+    }
+
+    public Rate load(Long rateId) {
+        return (Rate) HSF.get().getCurrentSession().load(Rate.class,rateId);
     }
 
 //    static  List<RateContext> rateContexts;

@@ -13,7 +13,6 @@ import com.noktiz.domain.model.image.ImageManagement;
 import com.noktiz.ui.web.BasePanel;
 import com.noktiz.ui.web.behavior.IntroBehavior;
 import com.noktiz.ui.web.component.NotificationFeedbackPanel;
-import com.noktiz.ui.web.user.SingleUserImageWithLinkPanel;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -22,7 +21,6 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
@@ -56,11 +54,7 @@ public abstract class ThreadInfoPanel extends BasePanel {
         Label invisiblity = new Label("invisiblity", new AbstractReadOnlyModel() {
             @Override
             public String getObject() {
-                if (getObj().getMe().equals(getObj().getStarter())) {
-                    return getObj().getThread().isStarterVisible() ? getString("Visible") : getString("Anonymous");
-                } else {
-                    return getObj().getThread().isTargetVisible() ? getString("Visible") : getString("Anonymous");
-                }
+                    return getObj().amIvisible() ? getString("Visible") : getString("Anonymous");
             }
         });
         wmc.add(invisiblity);

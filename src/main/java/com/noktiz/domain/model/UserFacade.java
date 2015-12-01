@@ -225,8 +225,7 @@ public class UserFacade implements Serializable {
 
     public ResultWithObject<ThreadFacade> createThread(UserFacade receiver, String title) {
         ResultWithObject<ThreadFacade> r = new ResultWithObject<>();
-
-        com.noktiz.domain.entity.Thread t = new com.noktiz.domain.entity.Thread();
+        Thread t = new Thread();
         t.setStarter(this.getUser());
         if (receiver != null) {
             t.setTarget(receiver.getUser());
@@ -249,8 +248,13 @@ public class UserFacade implements Serializable {
 
     }
 
-    public Result startThread(UserFacade receiver, String title, String text, Message.DIR dir) {
+    public ResultWithObject<ThreadFacade> startThread(UserFacade receiver, String title, String text, Message.DIR dir) {
+
         ResultWithObject<ThreadFacade> create;
+        if(!canSendMessageTo(receiver)){
+            return new ResultWithObject<>(false,"not.allowed");
+
+        }
         HSF.get().beginTransaction();
         try {
             create = createThread(receiver, title);
@@ -268,7 +272,7 @@ public class UserFacade implements Serializable {
         } catch (HibernateException ex) {
             HSF.get().roleback();
             Logger.getLogger(this.getClass()).info("HibernateException", ex);
-            return new Result(false);
+            return new ResultWithObject<>(false);
         }
     }
 

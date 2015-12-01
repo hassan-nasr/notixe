@@ -7,9 +7,6 @@ package com.noktiz.domain.model;
 
 import com.noktiz.domain.entity.Block;
 import com.noktiz.domain.entity.Message;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import com.noktiz.domain.entity.Thread;
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.entity.notifications.NotificationThanks;
@@ -17,13 +14,11 @@ import com.noktiz.domain.entity.rate.Rate;
 import com.noktiz.domain.entity.rate.RateContext;
 import com.noktiz.domain.entity.rate.RateManager;
 import com.noktiz.domain.persistance.HSF;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
-import org.hibernate.StaleObjectStateException;
+
+import java.io.Serializable;
+import java.util.*;
 
 /**
  *
@@ -44,7 +39,7 @@ public class ThreadFacade implements Serializable {
     private Block ParticipantBlockBy;
 
 //    private Block blocked;
-    ThreadFacade(Thread thread, UserFacade me) {
+    public ThreadFacade(Thread thread, UserFacade me) throws UnauthorizedAccessException {
         me.refresh();
         setMe(me);
         this.thread = thread;
@@ -56,10 +51,11 @@ public class ThreadFacade implements Serializable {
             reallparticipant = new UserFacade(thread.getTarget());
             anonymousParticipant = new UserFacade(thread.getTarget(), true);
         }
-        if (thread.getStarter() != null && me.getUser().equals(thread.getTarget())) {
+        else if (thread.getStarter() != null && me.getUser().equals(thread.getTarget())) {
             reallparticipant = new UserFacade(thread.getStarter());
             anonymousParticipant = new UserFacade(thread.getStarter(), true);
         }
+        else throw new UnauthorizedAccessException();
         
         if (thread.getStarter().equals(me.getUser())) {
             starter = me;
@@ -172,6 +168,13 @@ public class ThreadFacade implements Serializable {
             return false;
         }
         return participant.isAnonymous();
+    }
+
+    public Boolean amIvisible(){
+        if (getMe().equals(getStarter())){
+            return getThread().isStarterVisible();
+        }
+            return getThread().isTargetVisible();
     }
 
     public Result publish() {
@@ -393,6 +396,8 @@ public class ThreadFacade implements Serializable {
 
     public ResultWithObject<MessageFacade> createMessage(UserFacade sender, UserFacade receiver, String text, Message.DIR dir) {
         me.refresh();
+        if(!me.canSendMessageTo(receiver))
+            return new ResultWithObject<>(false,"not.allowed");
         Message m = new Message();
         m.setSendDate(new Date());
         m.setSender(sender.getUser());
@@ -448,8 +453,8 @@ public class ThreadFacade implements Serializable {
     }
 
     public void setTarget(UserFacade reciver) {
-        participant = reciver;
         if (reciver != null) {
+            participant = new UserFacade(reciver.getUser(),!thread.isTargetVisible());
             thread.setTarget(reciver.getUser());
         } else {
             thread.setTarget(null);
@@ -528,7 +533,7 @@ public class ThreadFacade implements Serializable {
         return thread.isTargetThanks();
     }
 
-    public Object getId() {
+    public Long getId() {
         return thread.getId();
     }
 

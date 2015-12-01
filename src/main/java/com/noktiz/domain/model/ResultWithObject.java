@@ -6,8 +6,7 @@
 
 package com.noktiz.domain.model;
 
-import com.noktiz.domain.entity.User;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,5 +35,17 @@ public class ResultWithObject<T> extends Result{
     public ResultWithObject(Result result, T object) {
         super(result.messages,result.result);
         this.object = object;
+    }
+
+    public ResultWithObject(boolean b, String message) {
+        super(message,b);
+    }
+
+    public ResultWithObject(T object, Message message, boolean result) {
+        this.object=object;
+        this.result=result;
+        this.messages = new ArrayList<>();
+        if(message!=null)
+            this.messages.add(message);
     }
 }

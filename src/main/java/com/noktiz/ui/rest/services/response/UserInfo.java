@@ -33,14 +33,15 @@ public class UserInfo {
         imageUrl_small = ImageManagement.getUserImageUrl(user, ImageManagement.ImageSize.small);
         imageUrl_medium = ImageManagement.getUserImageUrl(user, ImageManagement.ImageSize.medium);
         imageUrl_large = ImageManagement.getUserImageUrl(user, ImageManagement.ImageSize.large);
-        if(!user.equals(reference)) {
-            mutualTruestedFriendCount = Friendship.getMutualTrustedFriendsCount(user, reference);
-            isMyTrustedFriend = Friendship.exists(user, reference) != null;
-            amHisTruesteFriend = Friendship.exists(reference, user) != null;
-        }
-        else{
+        if(user.equals(reference)){
             email = user.getEmail();
         }
+        if(reference!=null)
+            if(!user.equals(reference)) {
+                mutualTruestedFriendCount = Friendship.getMutualTrustedFriendsCount(user, reference);
+                isMyTrustedFriend = Friendship.exists(user, reference) != null;
+                amHisTruesteFriend = Friendship.exists(reference, user) != null;
+            }
     }
 
     public String getUserId() {

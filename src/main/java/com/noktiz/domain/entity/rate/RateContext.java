@@ -4,15 +4,13 @@ import com.noktiz.domain.entity.BaseObject;
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.entity.privacy.ComplexPersonList;
 import org.apache.commons.lang.StringUtils;
-import org.hibernate.annotations.*;
 import org.hibernate.annotations.Index;
 
 import javax.persistence.*;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import java.util.*;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by hasan on 2014-10-04.
@@ -20,6 +18,7 @@ import java.util.*;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "LoadRateContextsByUserBefore", query = "From RateContext rc where rc.user=:user and rc.creationDate < :creationDate order by creationDate desc "),
+        @NamedQuery(name = "LoadRateContextsByUser", query = "From RateContext rc where rc.user=:user  order by creationDate desc "),
         @NamedQuery(name="rateContextWithMaxNextInvitationTime", query = "from RateContext where nextInviteDate < :date and enable = true")
 })
 public class RateContext extends BaseObject{

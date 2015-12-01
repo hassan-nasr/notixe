@@ -1,4 +1,4 @@
-package com.noktiz.ui.rest.services.user;
+package com.noktiz.ui.rest.services.ws;
 
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.model.PasswordManager;
@@ -183,6 +183,9 @@ public class UserWS extends BaseWS {
         final Date expireDate = new Date(new Date().getTime() + validTokenMilliseconds);
         ret.setExpireDate(expireDate.getTime());
         ret.setAccessToken(new TokenManager().createTokenString(new TokenData(ret.getUserId(),null,new Date(),expireDate,null)));
+        ret.setFirstName(user.getFirstName());
+        ret.setLastName(user.getLastName());
+        ret.setGender(user.getGender());
         return getJsonCreator().getJson(ret);
     }
 }

@@ -2,6 +2,8 @@ package com.noktiz.ui.rest.core.auth;
 
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.model.UserFacade;
+import com.noktiz.ui.rest.services.BaseWS;
+import com.noktiz.ui.rest.services.response.SimpleResponse;
 
 import javax.servlet.*;
 import java.io.IOException;
@@ -35,10 +37,18 @@ public class AuthenticationInfoExtractor implements Filter {
                     request.setAttribute("userRoles", tokenData.getRoles());
                     request.setAttribute("userPermissions", tokenData.getPermissions());
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
+                response.getWriter().append(BaseWS.createSimpleResponse(SimpleResponse.Status.Failed,"Invalid Token"));
+                return;
             }
         }
-        chain.doFilter(request, response);
+        try {
+            chain.doFilter(request, response);
+        }catch (Exception e){
+            throw e;
+//            response.reset();
+//            new PrintStream(response.getOutputStream()).print(BaseWS.createSimpleResponse(SimpleResponse.Status.Failed,"Error Processing Request"));
+        }
     }
 
     @Override

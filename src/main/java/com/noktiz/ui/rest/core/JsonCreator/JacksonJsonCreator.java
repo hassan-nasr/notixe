@@ -1,5 +1,6 @@
 package com.noktiz.ui.rest.core.JsonCreator;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.apache.log4j.Logger;
@@ -19,6 +20,7 @@ public class JacksonJsonCreator implements JsonCreator {
 
         ObjectMapper objMapper=new ObjectMapper();
         objMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS,false);
+        objMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         try {
             return objMapper.writeValueAsString(object);
         } catch (IOException e) {

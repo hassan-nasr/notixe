@@ -4,29 +4,24 @@
  */
 package com.noktiz.domain.model.email;
 
-import com.noktiz.domain.entity.token.SingleAccessToken;
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.entity.notifications.*;
 import com.noktiz.domain.entity.rate.NotificationRateInvite;
 import com.noktiz.domain.entity.rate.SimplePeriod;
+import com.noktiz.domain.entity.token.SingleAccessToken;
 import com.noktiz.domain.i18n.Local;
 import com.noktiz.domain.system.SystemConfig;
 import com.noktiz.domain.system.SystemConfigManager;
-import com.noktiz.ui.web.auth.SingleSignIn;
-import com.noktiz.ui.web.start.Welcome;
-import com.noktiz.ui.web.staticp.legal.PrivacyPolicy;
-import com.noktiz.ui.web.user.ActivatePage;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.wicket.request.cycle.RequestCycle;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 /**
  *
@@ -317,11 +312,11 @@ public class EmailCreator {
         StringBuilder content = new StringBuilder();
         PageParameters p = new PageParameters();
         p.add("code", user.getPersonalInfo().getActivate());
-        final CharSequence offset = RequestCycle.get().mapUrlFor(ActivatePage.class, p).toString();
+        final String offset = "/activate?code="+user.getPersonalInfo().getActivate();
         URL url= null;
         try {
             url = new URL(SystemConfigManager.getCurrentConfig().getProperty("hosturl"));
-            url= new URL(url,offset.toString());
+            url= new URL(url,offset);
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;
@@ -340,14 +335,11 @@ public class EmailCreator {
         ResourceBundle bundle = getBundle(user.getPersonalInfo().getLocal());
         StringBuilder content = new StringBuilder();
         StringBuilder html = new StringBuilder();
-
-        PageParameters p = new PageParameters();
-        p.add("code", singleAccessToken.getToken());
-        final CharSequence offset = RequestCycle.get().mapUrlFor(SingleSignIn.class, p).toString();
+        final String offset = "ssi?code="+singleAccessToken.getToken();
         URL url= null;
         try {
             url = new URL(SystemConfigManager.getCurrentConfig().getProperty("hosturl"));
-            url= new URL(url,offset.toString());
+            url= new URL(url, offset);
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;
@@ -376,8 +368,8 @@ public class EmailCreator {
         String rateMessage= MessageFormat.format(bundle.getString("0.responded.to.your.question.1"),senderName, nnm.getRate().getContext().getTitle());
         if(nnm.getRate().getRate()!=null)
             rateMessage += MessageFormat.format(bundle.getString("with.0.stars"), nnm.getRate().getRate());
-        content.append(rateMessage.toString());
-        html.append(rateMessage.toString());
+        content.append(rateMessage);
+        html.append(rateMessage);
         String commentMessage = ((nnm.getRate().getComment()!=null && !nnm.getRate().getComment().isEmpty())? MessageFormat.format(bundle.getString("and.wrote.n.0"), nnm.getRate().getComment()) :".");
         String commentMessageHtml = ((nnm.getRate().getComment()!=null && !nnm.getRate().getComment().isEmpty())? MessageFormat.format(bundle.getString("and.wrote.br.0_html"), nnm.getRate().getComment()) :".");
         content.append(commentMessage);
@@ -450,7 +442,7 @@ public class EmailCreator {
         URL url= null;
         try {
             url = new URL(SystemConfigManager.getCurrentConfig().getProperty("hosturl"));
-            url = new URL(url,RequestCycle.get().mapUrlFor(Welcome.class, null).toString());
+            url = new URL(url,"/welcome");
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;
@@ -475,21 +467,21 @@ public class EmailCreator {
         URL RegisteratinUrl=null;
         try {
             url = new URL(SystemConfigManager.getCurrentConfig().getProperty("hosturl"));
-            RegisteratinUrl= new URL(url,RequestCycle.get().mapUrlFor(ActivatePage.class, new PageParameters().add("code", notificationRateInvite.getOwner().getPersonalInfo().getActivate())).toString());
+            RegisteratinUrl= new URL(url,"activate?code="+notificationRateInvite.getOwner().getPersonalInfo().getActivate());
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;
         }
         URL privacyUrl =null;
         try {
-            privacyUrl= new URL(url,RequestCycle.get().mapUrlFor(PrivacyPolicy.class,null).toString());
+            privacyUrl= new URL(url,"/legal/privacy");
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;
         }
         URL termsUrl =null;
         try {
-            termsUrl= new URL(url,RequestCycle.get().mapUrlFor(PrivacyPolicy.class,null).toString());
+            termsUrl= new URL(url,"/legal/terms");
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;

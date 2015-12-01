@@ -1,5 +1,6 @@
 package com.noktiz.ui.rest.services;
 
+import com.noktiz.domain.model.Result;
 import com.noktiz.domain.model.UserFacade;
 import com.noktiz.domain.persistance.HSF;
 import com.noktiz.ui.rest.core.JsonCreator.JacksonJsonCreator;
@@ -15,6 +16,7 @@ import org.hibernate.cfg.Configuration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
+import java.util.List;
 
 /**
  * Created by Hassan on 8/15/2015.
@@ -26,7 +28,7 @@ public class BaseWS {
     private HttpServletRequest request;
 
 
-    protected JacksonJsonCreator getJsonCreator() {
+    protected static JacksonJsonCreator getJsonCreator() {
         return new JacksonJsonCreator();
     }
 
@@ -48,12 +50,29 @@ public class BaseWS {
         HSF.get().onEndRequest(rc);
     }
 
-    protected String createSimpleResponse(SimpleResponse.Status status, String message)  {
+    public static String createSimpleResponse(SimpleResponse.Status status, String message)  {
         try {
             return getJsonCreator().getJson(new SimpleResponse(status, message));
         }
         catch (Exception e){
-            Logger.getLogger(this.getClass()).error("error creating json",e);
+            Logger.getLogger(BaseWS.class).error("error creating json",e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static String createSimpleResponse(SimpleResponse.Status status, List<Result.Message> messages)  {
+        StringBuilder message = new StringBuilder();
+        for (int i = 0; i < messages.size(); i++) {
+            String s = messages.get(i).getText();
+            if(i>0)
+                message.append("\n");
+            message.append(s);
+        }
+        try {
+            return getJsonCreator().getJson(new SimpleResponse(status, message.toString()));
+        }
+        catch (Exception e){
+            Logger.getLogger(BaseWS.class).error("error creating json",e);
             throw new RuntimeException(e);
         }
     }

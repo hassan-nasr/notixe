@@ -237,6 +237,10 @@ public class BaseNotification extends BaseObject<BaseNotification> {
         return list;
     }
 
+    public static BaseNotification load(Long id){
+        return (BaseNotification) HSF.get().getCurrentSession().load(BaseNotification.class,id);
+    }
+
     public static List<BaseNotification> loadUnreadByUser(User user) {
         Query namedQuery = HSF.get().getCurrentSession().getNamedQuery("loadUnreadByUserOnHeader");
         namedQuery.setParameter("user", user);

@@ -8,19 +8,16 @@ package com.noktiz.domain.model;
 import com.noktiz.domain.entity.Block;
 import com.noktiz.domain.entity.Message;
 import com.noktiz.domain.entity.Message.DIR;
-import com.noktiz.domain.entity.PersonalInfo;
 import com.noktiz.domain.entity.Thread;
-import com.noktiz.domain.entity.User;
 import com.noktiz.domain.entity.notifications.NotificationNewMessage;
 import com.noktiz.domain.persistance.HSF;
-import com.noktiz.ui.web.auth.UserSession;
-import com.noktiz.ui.web.social.FacebookConnect;
-import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+
+import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -304,4 +301,7 @@ public class MessageFacade implements Serializable {
         }
     }
 
+    public Long getId() {
+        return message.getId();
+    }
 }

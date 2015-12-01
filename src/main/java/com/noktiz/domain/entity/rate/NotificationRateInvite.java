@@ -100,6 +100,9 @@ public class NotificationRateInvite extends BaseNotification{
         return sendEmail(email);
     }
 
+    public static NotificationRateInvite load(Long id){
+        return (NotificationRateInvite) HSF.get().getCurrentSession().load(NotificationRateInvite.class,id);
+    }
 
     public RateContext getRateContext() {
         return rateContext;

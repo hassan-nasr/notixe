@@ -13,11 +13,6 @@ import com.noktiz.domain.model.UserFactory;
 import com.noktiz.ui.web.auth.UserSession;
 import com.noktiz.ui.web.component.NotificationFeedbackPanel;
 import com.noktiz.ui.web.component.TabAjax;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -30,11 +25,17 @@ import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.util.string.StringValue;
 import org.apache.wicket.util.string.StringValueConversionException;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 /**
  *
  * @author hossein
  */
-public final class ThreadPanel extends Panel {
+public final class
+ThreadPanel extends Panel {
 
     final WebMarkupContainer threadContainer;
     WebMarkupContainer feedbackWMC;

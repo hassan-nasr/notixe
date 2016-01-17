@@ -25,7 +25,7 @@ import java.util.List;
 @Path("/rateContext")
 public class RateContextWS extends BaseWS  {
     @GET
-    @Path("/")
+    @Path("/get")
     @Produces("application/json")
     public String rateContext(@QueryParam("rateContextId")Long rateContextId, @QueryParam("from") Integer from, @QueryParam("count") Integer count){
         UserFacade userInSite = getUserInSite();

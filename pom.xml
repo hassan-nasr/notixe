@@ -235,7 +235,7 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.sun.jersey.jersey-test-framework</groupId>
             <artifactId>jersey-test-framework-core</artifactId>
             <version>1.19</version>
@@ -258,7 +258,7 @@
                 </exclusion>
             </exclusions>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.sun.grizzly</groupId>
             <artifactId>grizzly-http-servlet-deployer</artifactId>

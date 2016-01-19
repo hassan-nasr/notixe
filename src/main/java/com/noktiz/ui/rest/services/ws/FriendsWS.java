@@ -66,4 +66,22 @@ public class FriendsWS extends BaseWS  {
         }
         return getJsonCreator().getJson(userInfos);
     }
+
+    @GET
+    @Path("/searchFriendByEmail")
+    @Produces("application/json")
+    public String searchFriendByEmail(@QueryParam("emails")String  emails){
+        UserFacade userInSite = getUserInSite();
+        if(userInSite == null)
+            return createSimpleResponse(SimpleResponse.Status.Failed,"Unauthenticated");
+        String[] emailsArray = emails.split(",");
+        List<User> users = User.loadUsersWithEmailIds(emailsArray,true);
+        List<UserInfo> ret = new ArrayList<>();
+        for (User user : users) {
+            ret.add(new UserInfo(user,userInSite.getUser()));
+        }
+        return getJsonCreator().getJson(ret);
+    }
+
+
 }

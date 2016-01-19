@@ -6,17 +6,20 @@
 package com.noktiz.domain.model;
 
 import com.noktiz.domain.Utils.EmailAddressUtils;
-import com.noktiz.domain.entity.*;
+import com.noktiz.domain.entity.Block;
+import com.noktiz.domain.entity.NotificationSettings;
+import com.noktiz.domain.entity.PersonalInfo;
+import com.noktiz.domain.entity.User;
 import com.noktiz.domain.persistance.HSF;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-
 import com.noktiz.ui.web.auth.UserRoles;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Logger;
-import org.apache.wicket.validation.validator.EmailAddressValidator;
+import org.apache.solr.common.SolrException;
 import org.hibernate.HibernateException;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -116,7 +119,11 @@ public class UserFactory implements Serializable {
                 HSF.get().roleback();
                 Logger.getLogger(UserFacade.class).info("HibernateException", ex);
                 return new Result(false);
-            }finally {
+            }  catch (SolrException ex){
+                Logger.getLogger(UserFacade.class).info("SolrException", ex);
+                return new Result(true);
+            }
+            finally {
                 HSF.get().commitTransaction();
             }
         } else {

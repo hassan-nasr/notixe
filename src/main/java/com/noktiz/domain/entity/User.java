@@ -31,8 +31,8 @@ import org.hibernate.annotations.Where;
     @NamedQuery(name = "loadUserWithEmail", query = "From User u where u.email=:email"),
     @NamedQuery(name = "loadAllActiveUsers", query = "From User u where u.active <> false "),
     @NamedQuery(name = "loadActiveUserWithEmail", query = "From User u where u.email=:email and (u.active=true or u.active is null)"),
-    @NamedQuery(name = "loadUserWithEmailId", query = "Select c.user From Credential c where c.emailId=:emailId"),
-    @NamedQuery(name = "loadActiveUserWithEmailId", query = "Select c.user From Credential c where c.emailId=:emailId and (c.user.active=true or c.user.active is null)"),
+    @NamedQuery(name = "loadUserWithEmailId", query = "Select c.user From Credential c where c.emailId in (:emailId)"),
+    @NamedQuery(name = "loadActiveUserWithEmailId", query = "Select c.user From Credential c where c.emailId in (:emailId) and (c.user.active=true or c.user.active is null)"),
     @NamedQuery(name = "loadByActivationCode", query = "From User u where u.personalInfo.activate=:activate"),
     @NamedQuery(name = "loadUserWithFacebookId", query = "From User u where u.credential.facebookInfo.facebook_id=:facebook_id"),
     @NamedQuery(name = "loadUserWithGoogleId", query = "From User u where u.credential.googleInfo.google_id=:google_id"),
@@ -345,17 +345,9 @@ public class User extends BaseObject {
      * @return
      */
     public static User loadUserWithEmailId(String emailId, boolean checkActivate) {
-        emailId=EmailAddressUtils.normalizeEmail(emailId);
-        Session s = HSF.get().getCurrentSession();
-        Query query;
-        if (checkActivate) {
-            query = s.getNamedQuery("loadActiveUserWithEmailId");
-        }
-        else{
-            query = s.getNamedQuery("loadUserWithEmailId");
-        }
-        query.setString("emailId", emailId);
-        List<User> result = (List<User>) query.list();
+        String[] emails = new String[1];
+        emails[0]=emailId;
+        final List<User> result = loadUsersWithEmailIds(emails, checkActivate);
         if (result.isEmpty()) {
             return null;
         } else if (result.size() == 1) {
@@ -364,6 +356,24 @@ public class User extends BaseObject {
             Logger.getLogger(User.class).error("find more than on records with emailId :" + emailId);
             return result.get(0);
         }
+
+    }
+    public static List<User> loadUsersWithEmailIds(String[] emailIds, boolean checkActivate) {
+        List<String> emailList= new ArrayList<>(    );
+        for (int i = 0; i < emailIds.length; i++) {
+            emailList.add(EmailAddressUtils.normalizeEmail(emailIds[i]));
+        }
+        Session s = HSF.get().getCurrentSession();
+        Query query;
+        if (checkActivate) {
+            query = s.getNamedQuery("loadActiveUserWithEmailId");
+        }
+        else{
+            query = s.getNamedQuery("loadUserWithEmailId");
+        }
+        query.setParameterList("emailId", emailList);
+        List<User> result = (List<User>) query.list();
+        return result;
     }
 
     @Override

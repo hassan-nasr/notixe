@@ -1,7 +1,10 @@
 package com.noktiz.ui.rest.services.ws;
 
+import com.noktiz.domain.entity.PersonalInfo;
 import com.noktiz.domain.entity.User;
 import com.noktiz.domain.model.PasswordManager;
+import com.noktiz.domain.model.Result;
+import com.noktiz.domain.model.UserFactory;
 import com.noktiz.ui.rest.core.auth.TokenData;
 import com.noktiz.ui.rest.core.auth.TokenManager;
 import com.noktiz.ui.rest.services.BaseWS;
@@ -188,6 +191,40 @@ public class UserWS extends BaseWS {
         ret.setGender(user.getGender());
         return getJsonCreator().getJson(ret);
     }
+
+    @Produces("application/json")
+    @GET
+    @Path("/register")
+    public String register(@QueryParam("firstName") String firstName, @QueryParam("lastName") String lastName, @QueryParam("email") String email, @QueryParam("password") String password) {
+        User user = User.loadUserWithEmailId(email, true);
+        if (user != null) {
+            return createSimpleResponse(SimpleResponse.Status.Failed, "user exists");
+        }
+        user = new User();
+        user.setEmail(email);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPersonalInfo(new PersonalInfo());
+        user.setGender(User.Gender.Unknown);
+        user.getPersonalInfo().setPassword(password);
+        user.getPersonalInfo().setRePassword(password);
+
+        final Result result = UserFactory.addUser(user, false, true, true);
+        if(!result.result){
+            return createSimpleResponse(SimpleResponse.Status.Failed, result.messages);
+        }
+        AuthenticateInfo ret = new AuthenticateInfo();
+        ret.setUserId(user.getId().toString());
+        ret.setEmail(user.getEmail());
+        final Date expireDate = new Date(new Date().getTime() + validTokenMilliseconds);
+        ret.setExpireDate(expireDate.getTime());
+        ret.setAccessToken(new TokenManager().createTokenString(new TokenData(ret.getUserId(), null, new Date(), expireDate, null)));
+        ret.setFirstName(user.getFirstName());
+        ret.setLastName(user.getLastName());
+        ret.setGender(user.getGender());
+        return getJsonCreator().getJson(ret);
+    }
+
 }
 
 

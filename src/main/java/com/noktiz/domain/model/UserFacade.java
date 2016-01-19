@@ -35,6 +35,7 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrException;
 import org.apache.solr.common.SolrInputDocument;
 import org.apache.wicket.model.StringResourceModel;
 import org.hibernate.HibernateException;
@@ -621,6 +622,8 @@ public class UserFacade implements Serializable {
             HSF.get().roleback();
             Logger.getLogger(this.getClass()).info("HibernateException", ex);
             return new Result(false);
+        } catch (SolrException e){
+            return new Result(true);
         }
     }
 
@@ -937,7 +940,7 @@ public class UserFacade implements Serializable {
                 getSolrClient().add(toAdd);
             };
             getSolrClient().commit();
-        } catch (SolrServerException | IOException e) {
+        } catch (Throwable e) {
             Logger.getLogger(UserFacade.class).error(e);
         }
     }

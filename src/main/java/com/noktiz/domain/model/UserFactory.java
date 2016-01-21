@@ -60,6 +60,7 @@ public class UserFactory implements Serializable {
             load.setFirstName(user.getFirstName());
             load.setLastName(user.getLastName());
             load.setGender(user.getGender());
+            load.setLocation(user.getLocation());
             load.getPersonalInfo().setPassword(user.getPersonalInfo().getPassword());
             user=load;
             load=null;

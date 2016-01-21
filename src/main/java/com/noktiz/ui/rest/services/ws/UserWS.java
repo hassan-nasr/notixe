@@ -195,12 +195,18 @@ public class UserWS extends BaseWS {
     @Produces("application/json")
     @GET
     @Path("/register")
-    public String register(@QueryParam("firstName") String firstName, @QueryParam("lastName") String lastName, @QueryParam("email") String email, @QueryParam("password") String password) {
+    public String register(@QueryParam("firstName") String firstName,
+                           @QueryParam("lastName") String lastName,
+                           @QueryParam("email") String email,
+                           @QueryParam("password") String password,
+                           @QueryParam("location") String location
+    ) {
         User user = User.loadUserWithEmailId(email, true);
         if (user != null) {
             return createSimpleResponse(SimpleResponse.Status.Failed, "user exists");
         }
         user = new User();
+        user.setLocation(location);
         user.setEmail(email);
         user.setFirstName(firstName);
         user.setLastName(lastName);

@@ -132,6 +132,15 @@ public class User extends BaseObject {
     private Gender gender= Gender.Unknown;
     private String pictureId;
     private Boolean active;
+    private String location;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "user",optional = false)
     private PersonalInfo personalInfo = new PersonalInfo();

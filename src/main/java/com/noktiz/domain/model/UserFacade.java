@@ -69,6 +69,16 @@ public class UserFacade implements Serializable {
         }
     }
 
+    public String getLocation(){
+        return anonymous?"Unknown":user.getLocation();
+    }
+
+    public void setLocation(String location){
+        if(!anonymous){
+            user.setLocation(location);
+        }
+    }
+
     public String getLastName() {
         return anonymous ? "Friend" : user.getLastName();
     }

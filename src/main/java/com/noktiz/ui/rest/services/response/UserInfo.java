@@ -19,6 +19,7 @@ public class UserInfo {
     String imageUrl_medium;
     String imageUrl_large;
     String email;
+    String location;
 
 
     public UserInfo() {
@@ -33,6 +34,7 @@ public class UserInfo {
         imageUrl_small = ImageManagement.getUserImageUrl(user, ImageManagement.ImageSize.small);
         imageUrl_medium = ImageManagement.getUserImageUrl(user, ImageManagement.ImageSize.medium);
         imageUrl_large = ImageManagement.getUserImageUrl(user, ImageManagement.ImageSize.large);
+        location = user.getLocation();
         if(user.equals(reference)){
             email = user.getEmail();
         }
@@ -42,6 +44,14 @@ public class UserInfo {
                 isMyTrustedFriend = Friendship.exists(user, reference) != null;
                 amHisTruesteFriend = Friendship.exists(reference, user) != null;
             }
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getUserId() {
